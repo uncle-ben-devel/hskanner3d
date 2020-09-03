@@ -12,7 +12,7 @@ then
 	echo "Updating software."
 	apt-get -y upgrade
 	echo "Installing development software."
-	apt-get install -y cutecom git
+	apt-get install -y cutecom git meshlab
 
 	#getting the username of the dev account. may be problematic with multiple users.
 	usrname=$(eval getent passwd {$(awk '/^UID_MIN/ {print $2}' /etc/login.defs)..$(awk '/^UID_MAX/ {print $2}' /etc/login.defs)} | cut -d: -f1)
