@@ -9,7 +9,7 @@ then
 	else
 		echo "This system is not connected to the internet. Firmware could not be updated."
 	fi
-	# flash pxe-bootloader
+	# flash pxe-bootloader. if you want to know how to make your own bootloader with the settings you want, see https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711_bootloader_config.md
 	rpi-eeprom-update -d -f ./pieeprom-new.bin
 	echo "This system will reboot now."
 	reboot

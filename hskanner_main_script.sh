@@ -30,7 +30,7 @@ clear
 		whitebalance="auto"	# auto cloudy flash fluorescent horizon incandescent shade sunlight tungsten or red / blue gain in floating point (typical between 1.0 and 2.0)
 		selftimer="0"	# waiting time before capture in seconds
 		rotation="180"	#Rotate the output images by 0, 90, 180 or 270 degrees.
-		openfilebrowser="0"	# bool if the filebrowser should be opened after the shots are taken
+		openfilebrowser="1"	# bool if the filebrowser should be opened after the shots are taken
 	# processing photos
 		
 	# generating 3d data

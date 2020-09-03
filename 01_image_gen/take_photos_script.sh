@@ -67,11 +67,7 @@ printf "This script captures photos. Command line flag options:
 
 	if (( openfilebrowser ))
 	then
-		echo "Closing all existing file browser windows."
-		nautilus -q
-		echo "Opening file browser. Press Ctrl-C in the terminal to close it."
-		sleep 1	# give nautilus some time to exit, else it will crash
-		nautilus -w $image_dir
-
+		echo "Opening file browser."
+		nohup nautilus -w $image_dir # nohup will execute nautilus async, and disconnected from the terminal. see https://stackoverflow.com/questions/2368137/asynchronous-shell-commands
 	fi
 	exit 0
