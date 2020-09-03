@@ -28,7 +28,7 @@ clear
 		shutterspeed="16.67"	# shutter speed in ms. equals about 1/60s.
 		isosetting="100"	# ISO. Max is 1600, Min is 50.
 		whitebalance="auto"	# auto cloudy flash fluorescent horizon incandescent shade sunlight tungsten or red / blue gain in floating point (typical between 1.0 and 2.0)
-		selftimer="0"	# waiting time before capture in seconds
+		selftimer="10"	# waiting time before capture in seconds
 		rotation="180"	#Rotate the output images by 0, 90, 180 or 270 degrees.
 		openfilebrowser="1"	# bool if the filebrowser should be opened after the shots are taken
 	# processing photos

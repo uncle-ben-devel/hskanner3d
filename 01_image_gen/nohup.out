@@ -1,0 +1,51 @@
+Gtk-Message: 14:46:29.227: Failed to load module "canberra-gtk-module"
+Current Plugins Dir is: /usr/lib/meshlab/plugins 
+    Reading Param with name MeshLab::Appearance::backgroundBotColor : RichColor
+    Reading Param with name MeshLab::Appearance::backgroundTopColor : RichColor
+    Reading Param with name MeshLab::Appearance::baseLightAmbientColor : RichColor
+    Reading Param with name MeshLab::Appearance::baseLightDiffuseColor : RichColor
+    Reading Param with name MeshLab::Appearance::baseLightSpecularColor : RichColor
+    Reading Param with name MeshLab::Appearance::fancyBLightDiffuseColor : RichColor
+    Reading Param with name MeshLab::Appearance::fancyFLightDiffuseColor : RichColor
+    Reading Param with name MeshLab::Appearance::logAreaColor : RichColor
+    Reading Param with name MeshLab::Appearance::pointDistanceAttenuation : RichBool
+    Reading Param with name MeshLab::Appearance::pointSize : RichFloat
+    Reading Param with name MeshLab::Appearance::pointSmooth : RichBool
+    Reading Param with name MeshLab::Appearance::textureMagFilter : RichEnum
+    Reading Param with name MeshLab::Appearance::textureMinFilter : RichEnum
+    Reading Param with name MeshLab::Decoration::AreaHistParam : RichBool
+    Reading Param with name MeshLab::Decoration::BoxRatio : RichFloat
+    Reading Param with name MeshLab::Decoration::CameraFixedScaleParam : RichFloat
+    Reading Param with name MeshLab::Decoration::CameraRenderScaleType : RichEnum
+    Reading Param with name MeshLab::Decoration::CameraShowCameraDetails : RichBool
+    Reading Param with name MeshLab::Decoration::FixedHistMaxParam : RichFloat
+    Reading Param with name MeshLab::Decoration::FixedHistMinParam : RichFloat
+    Reading Param with name MeshLab::Decoration::FixedHistWidthParam : RichFloat
+    Reading Param with name MeshLab::Decoration::GridBack : RichBool
+    Reading Param with name MeshLab::Decoration::GridColorBack : RichColor
+    Reading Param with name MeshLab::Decoration::GridColorFront : RichColor
+    Reading Param with name MeshLab::Decoration::GridMajor : RichFloat
+    Reading Param with name MeshLab::Decoration::GridMinor : RichFloat
+    Reading Param with name MeshLab::Decoration::GridSnap : RichBool
+    Reading Param with name MeshLab::Decoration::HistBinNumParam : RichInt
+    Reading Param with name MeshLab::Decoration::NormalLength : RichFloat
+    Reading Param with name MeshLab::Decoration::ProjRasterAlpha : RichDynamicFloat
+    Reading Param with name MeshLab::Decoration::ProjRasterLighting : RichBool
+    Reading Param with name MeshLab::Decoration::ProjRasterOnAllMeshes : RichBool
+    Reading Param with name MeshLab::Decoration::ProjRasterUseVBO : RichBool
+    Reading Param with name MeshLab::Decoration::SSAORadius : RichFloat
+    Reading Param with name MeshLab::Decoration::ShadowIntensityVal : RichDynamicFloat
+    Reading Param with name MeshLab::Decoration::ShadowMethod : RichEnum
+    Reading Param with name MeshLab::Decoration::ShowBorderFlag : RichBool
+    Reading Param with name MeshLab::Decoration::ShowMeshCameras : RichBool
+    Reading Param with name MeshLab::Decoration::ShowNonRegular : RichBool
+    Reading Param with name MeshLab::Decoration::ShowRasterCameras : RichBool
+    Reading Param with name MeshLab::Decoration::ShowSeparatrix : RichBool
+    Reading Param with name MeshLab::Decoration::ShowShadow : RichBool
+    Reading Param with name MeshLab::Decoration::TextureFaceColor : RichBool
+    Reading Param with name MeshLab::Decoration::TextureStyle : RichBool
+    Reading Param with name MeshLab::Decoration::UseFixedHistParam : RichBool
+    Reading Param with name MeshLab::Decoration::VertDotSize : RichDynamicFloat
+Shader directory found '/usr/share/meshlab/shaders', and it contains 19 gdp files
+Shader directory found '/usr/share/meshlab/shaders/shadersrm', and it contains 5 rfx files
+libpng warning: iCCP: known incorrect sRGB profile

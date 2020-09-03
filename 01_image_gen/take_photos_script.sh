@@ -68,6 +68,6 @@ printf "This script captures photos. Command line flag options:
 	if (( openfilebrowser ))
 	then
 		echo "Opening file browser."
-		nohup nautilus -w $image_dir # nohup will execute nautilus async, and disconnected from the terminal. see https://stackoverflow.com/questions/2368137/asynchronous-shell-commands
+		nohup nautilus -w $image_dir > /dev/null 2>&1 & # nohup will execute nautilus async, and disconnected from the terminal. see https://stackoverflow.com/questions/2368137/asynchronous-shell-commands
 	fi
 	exit 0
