@@ -5,11 +5,12 @@
         "fileVersion": "1.1",
         "nodesVersions": {
             "CameraInit": "2.0",
+            "ConvertSfMFormat": "2.0",
+            "Publish": "1.1",
+            "StructureFromMotion": "2.0",
             "FeatureExtraction": "1.1",
             "ImageMatching": "1.0",
-            "FeatureMatching": "2.0",
-            "Publish": "1.1",
-            "StructureFromMotion": "2.0"
+            "FeatureMatching": "2.0"
         }
     },
     "graph": {
@@ -25,7 +26,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "702d65a6f3b60358e9ac1e75fd431fa26733f306"
+                "0": "0eea3dfc40ea19d83d98599a56e25e3e2d7cf7ca"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -72,6 +73,27 @@
                             0.0
                         ],
                         "locked": false
+                    },
+                    {
+                        "intrinsicId": 3570249406,
+                        "pxInitialFocalLength": -1.0,
+                        "pxFocalLength": 2477.769717528438,
+                        "type": "fisheye4",
+                        "width": 3280,
+                        "height": 2464,
+                        "serialNumber": "/home/hskanner3d-dev/Pictures/03-Sep-2020-15:23:56_RaspberryPi_RP_imx219",
+                        "principalPoint": {
+                            "x": 1640.0,
+                            "y": 1232.0
+                        },
+                        "initializationMode": "unknown",
+                        "distortionParams": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "locked": false
                     }
                 ],
                 "sensorDatabase": "/home/hskanner3d-dev/Documents/software/Meshroom-2019.2.0-linux/Meshroom-2019.2.0/aliceVision/share/aliceVision/cameraSensors.db",
@@ -95,7 +117,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "51bf8128e08d36ae2839b93b4179d6e1f3cc1fa1"
+                "0": "72828bb158680150728046e3ef5c6e29f0cc010c"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -124,7 +146,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "724735b7a418f8d1e9c9b4c6cf8e0e93e97baf5e"
+                "0": "95635db330bd2c20112f3f00a4fab55ea13e7647"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -155,7 +177,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "4c8f707199e70f65dd16d397b752a1600e800bc9"
+                "0": "0a4feeddcdecb270ab0e2cf3d5bd44cf002f43cb"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -194,7 +216,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "bea75a23df5766ff7bea9698515b3b11fab223dd"
+                "0": "59dfb678bc2ef0127790c620e7612de989210aa5"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -211,7 +233,7 @@
                 "localizerEstimatorMaxIterations": 4096,
                 "localizerEstimatorError": 0.0,
                 "lockScenePreviouslyReconstructed": false,
-                "useLocalBA": false,
+                "useLocalBA": true,
                 "localBAGraphDistance": 1,
                 "maxNumberOfMatches": 0,
                 "minInputTrackLength": 2,
@@ -238,8 +260,8 @@
         "Publish_1": {
             "nodeType": "Publish",
             "position": [
-                841,
-                -1
+                1125,
+                -3
             ],
             "parallelization": {
                 "blockSize": 0,
@@ -247,18 +269,52 @@
                 "split": 1
             },
             "uids": {
-                "0": "2a20d1dedc8182a18a287999d22f8f5d06bebb75"
+                "0": "3d09b51331e29205406ea345bcc8b97ab9f7b607"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
                 "inputFiles": [
                     "",
                     "",
-                    "{StructureFromMotion_1.output}"
+                    "{ConvertSfMFormat_1.output}"
                 ],
                 "output": ""
             },
             "outputs": {}
+        },
+        "ConvertSfMFormat_1": {
+            "nodeType": "ConvertSfMFormat",
+            "position": [
+                869,
+                -2
+            ],
+            "parallelization": {
+                "blockSize": 0,
+                "size": 0,
+                "split": 1
+            },
+            "uids": {
+                "0": "657d21e36ac4789c0b945080be0c06cd4251c874"
+            },
+            "internalFolder": "{cache}/{nodeType}/{uid0}/",
+            "inputs": {
+                "input": "{StructureFromMotion_1.output}",
+                "fileExt": "ply",
+                "describerTypes": [
+                    "sift",
+                    "akaze"
+                ],
+                "imageWhiteList": [],
+                "views": true,
+                "intrinsics": true,
+                "extrinsics": true,
+                "structure": true,
+                "observations": true,
+                "verboseLevel": "info"
+            },
+            "outputs": {
+                "output": "{cache}/{nodeType}/{uid0}/sfm.{fileExtValue}"
+            }
         }
     }
 }

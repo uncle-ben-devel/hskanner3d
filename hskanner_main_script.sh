@@ -9,6 +9,7 @@ clear
 	three_d_gen_dir="03_3d_gen"
 	three_d_filter_dir="04_3d_filter"
 	meshroomroot="$HOME/Documents/software/Meshroom-2019.2.0-linux/Meshroom-2019.2.0" # install directory of meshroom"
+	#pipeline_file="compute_pointcloud.mg"
 	pipeline_file="compute_tex_model.mg"
 	pipeline_dir="03_3d_gen"
 		tps_path="$workpath/$take_photos_script_dir"	# absolute path for take_photos_script.sh
@@ -38,7 +39,6 @@ clear
 	# processing 3d data
 
 # execution
-	mkdir -p $i_path
-	mkdir -p $o_path
+	mkdir -p $i_path # output path will be created by meshroom, if it succeeds.
 	$tps_path/take_photos_script.sh -s $shutterspeed -i $isosetting -b $whitebalance -o $i_path -t $selftimer -f $openfilebrowser -r $rotation
 	$tdgs_path/generate_3d_data_script.sh -i $i_path -o $o_path -p $pipeline_file -d $pipe_path -v $view_mesh
