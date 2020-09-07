@@ -31,6 +31,9 @@ ___
 	+	take photos with script and compute manually in the meshroom gui
 	?	if necessary, generate scripts for 2d and 3d filtering;	seems unneeded, will proceed without it for now. maybe adding it in a later stage
 +	automate mesh generating process
+-	make it easy to swap out PXE OS images (for easy maintenance)
+-	split generating the point cloud and the model so that 1) we don't have to calculate the sfm twice 2) we can see results early
+-	change the take_photos_script to use python to interface with compound pi for increased reliability
 -	design and virtual test of the final scanner: dev-1-45
 	-	figure out camera positions and do photogrammetry with the virtual cameras to confirm function
 	-	figure out lighting positions and intensity
