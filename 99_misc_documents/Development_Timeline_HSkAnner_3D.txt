@@ -35,7 +35,7 @@ ___
 	+ add line RaspberryPi;RP_imx219;3.68;raspberrypiorg
 -	make it easy to swap out PXE OS images (for easy maintenance); i'll procrastinate on that because it's probably difficult if it's possible at all.
 !	split generating the point cloud and the model so that 1) we don't have to calculate the sfm twice 2) we can see results early; not possible with meshroom_compute (yet), since it always wants to do start to finish in one fell swoop
--	change the take_photos_script to use python to interface with compound pi for increased reliability
++	change the take_photos_script to use python to interface with compound pi for increased reliability; not a single hang of compound pi since the change. seems to work!
 -	design and virtual test of the final scanner: dev-1-45
 	-	figure out camera positions and do photogrammetry with the virtual cameras to confirm function
 	-	figure out lighting positions and intensity
