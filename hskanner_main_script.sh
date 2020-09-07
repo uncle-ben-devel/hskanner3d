@@ -2,8 +2,7 @@
 clear
 
 # paths
-	#workpath="`pwd`/`dirname $0`"	#gets the current path of this script as a reference
-	workpath="`dirname $0`"	#gets the current path of this script as a reference
+	workpath="$(dirname "$(readlink -f "$0")")"	#gets the current path of this script as a reference. see https://stackoverflow.com/questions/59895/how-to-get-the-source-directory-of-a-bash-script-from-within-the-script-itself#59916
 	# directories for processing
 	take_photos_script_dir="01_image_gen"	# path in reference to this script. absolute path will be generated automatically.
 	image_filter_dir="02_image_filter"

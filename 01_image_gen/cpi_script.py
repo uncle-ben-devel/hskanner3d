@@ -14,7 +14,7 @@ def main(argv):
     isosetting = 100
     shutterspeed = 16.67  # shutterspeed in ms
     whitebalance = 'auto'
-    output_dir = expanduser("~/Pictures") # default dir will spam the Pictures dir of the user.
+    output_dir = expanduser("~/Pictures") # default dir will spam the Pictures dir of the user. Source: https://stackoverflow.com/questions/4028904/how-to-get-the-home-directory-in-python#4028943
     netw_addr = '192.168.128.0/24'
     wait_time = 0.0
 

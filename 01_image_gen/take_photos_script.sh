@@ -16,7 +16,7 @@ printf "This script captures photos. Command line flag options:
 	[-a] Network address in format aaa.bbb.ccc.ddd.eee/CIDR
 "
 # directories
-	workpath="`dirname $0`"	#gets the current path of this script as a reference
+	workpath="$(dirname "$(readlink -f "$0")")"	#gets the current path of this script as a reference
 # default settings
 	number_sensor_nodes="9"		# amount of sensor nodes in the system
 	netw_subnet="192.168.128.0/24"	
