@@ -2,7 +2,8 @@
 clear
 
 # paths
-	workpath="`pwd`/`dirname $0`"	#gets the current path of this script as a reference
+	#workpath="`pwd`/`dirname $0`"	#gets the current path of this script as a reference
+	workpath="`dirname $0`"	#gets the current path of this script as a reference
 	# directories for processing
 	take_photos_script_dir="01_image_gen"	# path in reference to this script. absolute path will be generated automatically.
 	image_filter_dir="02_image_filter"
@@ -14,7 +15,7 @@ clear
 	pipeline_dir="03_3d_gen"
 		tps_path="$workpath/$take_photos_script_dir"	# absolute path for take_photos_script.sh
 		ifs_path="$workpath/$image_filter_dir"	# ... for image_filter_script.sh
-		tdgs_path="$workpath/$three_d_gen_dir"	# ... for generate_3d_data_script.sh
+		tdgs_path="$workpath/$three_d_gen_dir"	# ... for generate_3d_data_script.sh. td for three D.
 		tdfs_path="$workpath/$three_d_filter_dir"	# ... for generate_3d_filter_script.sh
 		pipe_path="$workpath/$pipeline_dir"	# ... for the meshroom pipeline file
 

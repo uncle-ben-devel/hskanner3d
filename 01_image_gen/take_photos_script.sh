@@ -13,17 +13,19 @@ printf "This script captures photos. Command line flag options:
 	[-t] Time in seconds to wait before capture.
 	[-f] Open the file browser after taking the photos.
 	[-r] Rotate the output images by 0, 90, 180 or 270 degrees.
+	[-a] Network address in format aaa.bbb.ccc.ddd.eee/CIDR
 "
-
+# directories
+	workpath="`dirname $0`"	#gets the current path of this script as a reference
 # default settings
 	number_sensor_nodes="9"		# amount of sensor nodes in the system
-	subnet="192.168.128.0/24"	
+	netw_subnet="192.168.128.0/24"	
 	timestamp=$(date "+%d-%h-%Y-%T")	# name for the folder where the images will be stored
 	image_dir=$HOME/Pictures/$timestamp	# rest of the path for the image storage
 	# camera settings
 	series_image_capture="1"	# the amount of images captured seqentially
 	shutterspeed="16.67"		# shutter speed in ms. equals about 1/60s.
-	isosetting="50"		# ISO. Max is 1600, Min is 50.
+	isosetting="100"		# ISO. Max is 1600, Min is 50.
 	imagesres="3280x2464"		# max res for camera module v2. see https://www.raspberrypi.org/documentation/hardware/camera/
 	whitebalance="auto"	# auto cloudy flash fluorescent horizon incandescent shade sunlight tungsten or red / blue gain in floating point (typical between 1.0 and 2.0)
 
@@ -32,7 +34,7 @@ printf "This script captures photos. Command line flag options:
 	sleepvar=0		# timer, waiting time in seconds
 	rotatevar=0		# rotation of images after capture in degrees
 	openfilebrowser=0	# bool if the filebrowser should be opened after the shots are taken
-	while getopts o:s:i:b:t:f:r: option
+	while getopts o:s:i:b:t:f:r:a: option
 	do
 		case "${option}"
 		in
@@ -43,15 +45,15 @@ printf "This script captures photos. Command line flag options:
 			t) sleepvar=${OPTARG};;	# timer for when you want to take selfies or something
 			f) openfilebrowser=${OPTARG};;
 			r) rotatevar=${OPTARG};; # rotation for images. first is a flag, second the degrees.
+			a) netw_subnet=${OPTARG};; # subnet for cpi to search for the sensor nodes
 		esac
 	done
 
 	echo "Timer will wait for $sleepvar seconds before taking the shot."
-	sleep $sleepvar
 
 # fire at will!
 	mkdir -p $image_dir
-	printf "find $number_sensor_nodes \n exposure $shutterspeed \n iso $isosetting \n awb $whitebalance \n resolution $imagesres \n capture \n download \n quit" | cpi -n $subnet -o $image_dir --capture-count $series_image_capture	# this command basically enters all the config into the cpi console as a user would, with \n as enter between commands.
+	python2 $workpath/cpi_script.py -s $shutterspeed -i $isosetting -w $whitebalance -o $image_dir -t $sleepvar -a $netw_subnet
 
 	echo "Capture done."
 
