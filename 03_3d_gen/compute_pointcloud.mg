@@ -4,13 +4,13 @@
         "releaseVersion": "2019.2.0",
         "fileVersion": "1.1",
         "nodesVersions": {
-            "CameraInit": "2.0",
-            "ConvertSfMFormat": "2.0",
-            "Publish": "1.1",
             "StructureFromMotion": "2.0",
             "FeatureExtraction": "1.1",
             "ImageMatching": "1.0",
-            "FeatureMatching": "2.0"
+            "FeatureMatching": "2.0",
+            "CameraInit": "2.0",
+            "ConvertSfMFormat": "2.0",
+            "Publish": "1.1"
         }
     },
     "graph": {
@@ -26,7 +26,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "0eea3dfc40ea19d83d98599a56e25e3e2d7cf7ca"
+                "0": "a1ec3b14ec3382c27edc3d9671ddf519c9943fea"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -97,7 +97,7 @@
                     }
                 ],
                 "sensorDatabase": "/home/hskanner3d-dev/Documents/software/Meshroom-2019.2.0-linux/Meshroom-2019.2.0/aliceVision/share/aliceVision/cameraSensors.db",
-                "defaultFieldOfView": 67.0,
+                "defaultFieldOfView": 79.0,
                 "groupCameraFallback": "folder",
                 "verboseLevel": "info"
             },
@@ -117,7 +117,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "72828bb158680150728046e3ef5c6e29f0cc010c"
+                "0": "b95997eb709c5e0a24861c72891fd073ff35cec5"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -146,7 +146,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "95635db330bd2c20112f3f00a4fab55ea13e7647"
+                "0": "2c49c5db6d71ebcdad981caa1d5067853a00972c"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -177,7 +177,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "0a4feeddcdecb270ab0e2cf3d5bd44cf002f43cb"
+                "0": "8c20a6685be06b0b6b8595791c082ad22950286f"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -216,7 +216,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "59dfb678bc2ef0127790c620e7612de989210aa5"
+                "0": "d9274d5913aecfa3527f894dbc1c262cef85c18d"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -269,7 +269,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "3d09b51331e29205406ea345bcc8b97ab9f7b607"
+                "0": "41ba385e7faf36385f0735b74f5971bb37475350"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -294,7 +294,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "657d21e36ac4789c0b945080be0c06cd4251c874"
+                "0": "b4a758fa5c8167af28a8f87c1ea413db9b2d5597"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {

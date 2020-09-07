@@ -51,12 +51,12 @@ printf "This script generates 3D data from photos. Command line flag options:
 
 	if (( openobj ))
 	then
-		if test -f "sfm.ply"
+		if test -f "$output_dir/sfm.ply"
 		then
 			nohup meshlab $output_dir/sfm.ply > /dev/null 2>&1 &
 		fi
 
-		if test -f "texturedMesh.obj"
+		if test -f "$output_dir/texturedMesh.obj"
 		then
 			nohup meshlab $output_dir/texturedMesh.obj > /dev/null 2>&1 &
 		fi

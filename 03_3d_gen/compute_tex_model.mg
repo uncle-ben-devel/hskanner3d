@@ -4,19 +4,19 @@
         "releaseVersion": "2019.2.0",
         "fileVersion": "1.1",
         "nodesVersions": {
+            "Meshing": "3.0",
+            "MeshFiltering": "2.0",
+            "Publish": "1.1",
+            "StructureFromMotion": "2.0",
+            "PrepareDenseScene": "3.0",
+            "FeatureExtraction": "1.1",
+            "DepthMap": "2.0",
             "Texturing": "5.0",
             "ImageMatching": "1.0",
             "FeatureMatching": "2.0",
             "CameraInit": "2.0",
             "ConvertSfMFormat": "2.0",
-            "DepthMapFilter": "3.0",
-            "Publish": "1.1",
-            "Meshing": "3.0",
-            "MeshFiltering": "2.0",
-            "StructureFromMotion": "2.0",
-            "PrepareDenseScene": "3.0",
-            "FeatureExtraction": "1.1",
-            "DepthMap": "2.0"
+            "DepthMapFilter": "3.0"
         }
     },
     "graph": {
@@ -32,14 +32,14 @@
                 "split": 1
             },
             "uids": {
-                "0": "c29020d6bc41fdf7e3ba492fd1b0b1f6553f999d"
+                "0": "0bfa9217bdc557f6c28a0322acd444b3885b2ec1"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
                 "viewpoints": [],
                 "intrinsics": [],
                 "sensorDatabase": "/home/hskanner3d-dev/Documents/software/Meshroom-2019.2.0-linux/Meshroom-2019.2.0/aliceVision/share/aliceVision/cameraSensors.db",
-                "defaultFieldOfView": 67.0,
+                "defaultFieldOfView": 79.0,
                 "groupCameraFallback": "folder",
                 "verboseLevel": "info"
             },
@@ -59,7 +59,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "200e53b332fe7b379eca6d06bfd886fcc910cf20"
+                "0": "993499a53f50bd40c0326a9afde8dda482ba0c26"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -88,7 +88,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "61488dc02cfefab12f31d56b9802dd212a3815c0"
+                "0": "aadec704f50d43edf376608f3f41a101a11fa0f2"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -119,7 +119,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "cefdfcd09bd1ca15472b96e760f275c0c1df146d"
+                "0": "d12bbf1c8597e315350b5d42af0eb19df0e0278e"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -158,7 +158,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "9823adb5f5fe910a37a3dbb203cbb69b0daf339a"
+                "0": "d9a95b7ba5393eaee7f41e1a5ee4aaadf8ff2594"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -211,7 +211,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "459c8ae350340bad5f300c42f622bff02285c73c"
+                "0": "ed1c3b8136b4192539ede90ccf27b63f9a3236e8"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -240,7 +240,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "929f6ec85ef6cf5f3fc971689ec9fd9d4c647031"
+                "0": "e9960fb75d6b3be1d698585cdfebd6cf4cd3700e"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -282,7 +282,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "b8f0557e202d75afc9193a129dc8af8e7d35a3c5"
+                "0": "a4a149145fd1e7585f5cb9e66b8877dfe8d06144"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -314,7 +314,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "e36e4abbc5c4322c40a99389ba79559a89c39ebf"
+                "0": "794646f9672fdcfa4a12e038185bf09754bd521c"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -340,7 +340,7 @@
                 "simGaussianSize": 10.0,
                 "minAngleThreshold": 1.0,
                 "refineFuse": true,
-                "addLandmarksToTheDensePointCloud": false,
+                "addLandmarksToTheDensePointCloud": true,
                 "colorizeOutput": false,
                 "saveRawDensePointCloud": false,
                 "verboseLevel": "info"
@@ -362,7 +362,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "fe7f54a4b5ad3711164dd6774ee2eda4927e444a"
+                "0": "a208c3fa40cddc861d89714cd8dc4c2dec81699c"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -389,7 +389,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "92383a5b6527193650faa0dfb9517f7f865b1543"
+                "0": "c291689f101b3b667e58128ed9bdf374dd5a7a1e"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -439,7 +439,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "d4ec91185f914f5ce472fbe62b88cb963b5158d0"
+                "0": "e7f5043cb99d80730a6846f2c5d839349acfde3c"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -466,7 +466,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "565820041323aa4ae182c9ca7c45870808cf828c"
+                "0": "601b8f001d79713ed8618ef447f5b2511ebd4d9d"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
