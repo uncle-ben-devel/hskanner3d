@@ -22,41 +22,13 @@ then
 		# software install
 		sudo apt-get -y install unzip kpartx dnsmasq nfs-kernel-server
 
-		# pxe setup. tutorials followed: https://hackaday.com/2019/11/11/network-booting-the-pi-4/
-		# as well as parts of this https://linuxhit.com/raspberry-pi-pxe-boot-netbooting-a-pi-4-without-an-sd-card/
-		cd
-		sudo mkdir -p /nfs/raspi_v0
-		wget https://downloads.raspberrypi.org/raspios_lite_armhf_latest
-		unzip raspios_lite_armhf_latest
-		sudo kpartx -a -v *.img
-		mkdir rootmnt
-		mkdir bootmnt
-		# edit those to fit your loop. on ubuntu 18.04, it's loop8, in the tutorial they used loop0.
-		# check the output of kpartx for your loop.
-		sudo mount /dev/mapper/loop8p2 ~/rootmnt/
-		sudo mount /dev/mapper/loop8p1 ~/bootmnt/
-		sudo cp -a rootmnt/* /nfs/raspi_v0
-		sudo cp -a bootmnt/* /nfs/raspi_v0/boot/
-		cd /nfs/raspi_v0/boot
+		# static setup
+		echo "$HOME/nfs/raspi_v0 *(rw,sync,no_subtree_check,no_root_squash)" | sudo tee -a /etc/exports
+		sudo mkdir -p $HOME/tftpboot
+		echo "$HOME/nfs/raspi_v0/boot $HOME/tftpboot none defaults,bind 0 0" | sudo tee -a /etc/fstab
+		sudo mount $HOME/tftpboot
+		sudo chmod 777 $HOME/tftpboot
 
-		# those might not be necessary anymore since the tutorial is old
-		sudo rm start4.elf
-		sudo rm fixup4.dat
-		sudo wget https://github.com/Hexxeh/rpi-firmware/raw/master/start4.elf
-		sudo wget https://github.com/Hexxeh/rpi-firmware/raw/master/fixup4.dat
-		#
-
-		sudo mkdir -p /tftpboot
-		echo "/nfs/raspi_v0/boot /tftpboot none defaults,bind 0 0" | sudo tee -a /etc/fstab
-		sudo mount /tftpboot
-		sudo chmod 777 /tftpboot
-
-		sudo touch /nfs/raspi_v0/boot/ssh
-		sudo sed -i /UUID/d /nfs/raspi_v0/etc/fstab
-		# we modified the ip. the server's IP will be 192.168.128.2
-		echo "console=serial0,115200 console=tty root=/dev/nfs nfsroot=192.168.128.2:/nfs/raspi_v0,vers=3 rw ip=dhcp rootwait elevator=deadline" | sudo tee /nfs/raspi_v0/boot/cmdline.txt
-
-		echo "/nfs/raspi_v0 *(rw,sync,no_subtree_check,no_root_squash)" | sudo tee -a /etc/exports
 		sudo systemctl enable rpcbind
 		sudo systemctl enable nfs-kernel-server
 		sudo systemctl restart rpcbind
@@ -65,9 +37,11 @@ then
 		sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
 		# our DHCP range is from 192.168.128.100/24 to 192.168.128.200/24
 		echo 'dhcp-range=192.168.128.100,192.168.128.200,12h' | sudo tee -a /etc/dnsmasq.conf
+		echo 'server=1.1.1.1' | sudo tee -a /etc/dnsmasq.conf	# dns servers
+		echo 'server=1.0.0.1' | sudo tee -a /etc/dnsmasq.conf
 		echo 'log-dhcp' | sudo tee -a /etc/dnsmasq.conf
 		echo 'enable-tftp' | sudo tee -a /etc/dnsmasq.conf
-		echo 'tftp-root=/tftpboot' | sudo tee -a /etc/dnsmasq.conf
+		echo "tftp-root=$HOME/tftpboot" | sudo tee -a /etc/dnsmasq.conf
 		echo 'pxe-service=0,"Raspberry Pi Boot"' | sudo tee -a /etc/dnsmasq.conf
 		sudo systemctl enable dnsmasq
 		sudo systemctl restart dnsmasq

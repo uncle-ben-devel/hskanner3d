@@ -52,9 +52,9 @@ def main(argv):
 
 # dialing in settings
     with CompoundPiClient() as client:
-        client.servers.network = netw_addr
-        client.servers.find(number_sensor_nodes)
-        assert len(client.servers) == number_sensor_nodes
+        client.servers.network='192.168.128.0/24'
+        client.servers.find(9)
+        assert len(client.servers) == 9
         print('Configuring servers')
         client.resolution(3280,2464)
         client.agc('auto')
@@ -67,7 +67,8 @@ def main(argv):
         os.chdir(output_dir) 
 
 # capture images
-        client.capture(count=1,video_port=False,quality=100,delay=0.5+float(wait_time)) # take 1 shot, with the high quality port, at 100% quality. wait for 0.5s plus user defined wait time to sync captures.
+        #client.capture(count=1,video_port=False,quality=100) # take 1 shot, with the high quality port, at 100% quality. wait for 0.5s plus user defined wait time to sync captures.
+	client.capture(count=1,video_port=False,quality=100,delay=0.5+float(wait_time)) # take 1 shot, with the high quality port, at 100% quality. wait for 0.5s plus user defined wait time to sync captures.
 
 # download images
         try:
