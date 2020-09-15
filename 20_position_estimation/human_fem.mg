@@ -4,17 +4,17 @@
         "releaseVersion": "2019.2.0",
         "fileVersion": "1.1",
         "nodesVersions": {
-            "MeshFiltering": "2.0",
-            "DepthMapFilter": "3.0",
-            "DepthMap": "2.0",
-            "Meshing": "3.0",
-            "FeatureMatching": "2.0",
-            "CameraInit": "2.0",
-            "ImageMatching": "1.0",
-            "Texturing": "5.0",
             "StructureFromMotion": "2.0",
             "PrepareDenseScene": "3.0",
-            "FeatureExtraction": "1.1"
+            "FeatureExtraction": "1.1",
+            "DepthMap": "2.0",
+            "Texturing": "5.0",
+            "ImageMatching": "1.0",
+            "FeatureMatching": "2.0",
+            "CameraInit": "2.0",
+            "DepthMapFilter": "3.0",
+            "Meshing": "3.0",
+            "MeshFiltering": "2.0"
         }
     },
     "graph": {
@@ -36,7 +36,7 @@
             "inputs": {
                 "viewpoints": [],
                 "intrinsics": [],
-                "sensorDatabase": "C:\\Users\\Solaris\\Documents\\programme\\Meshroom-2019.2.0\\aliceVision\\share\\aliceVision\\cameraSensors.db",
+                "sensorDatabase": "C:/Users/Solaris/Documents/programme/Meshroom-2019.2.0/aliceVision/share/aliceVision/cameraSensors.db",
                 "defaultFieldOfView": 79.0,
                 "groupCameraFallback": "folder",
                 "verboseLevel": "info"
@@ -57,7 +57,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "993499a53f50bd40c0326a9afde8dda482ba0c26"
+                "0": "fd75bf97ca6bcfaa797a42fb2b19bc5bc2afd59b"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -66,7 +66,7 @@
                     "sift",
                     "akaze"
                 ],
-                "describerPreset": "high",
+                "describerPreset": "ultra",
                 "forceCpuExtraction": true,
                 "verboseLevel": "info"
             },
@@ -86,7 +86,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "aadec704f50d43edf376608f3f41a101a11fa0f2"
+                "0": "c998eb953b85ee749cf0f52de5c17b3c0634e0d7"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -94,7 +94,7 @@
                 "featuresFolders": [
                     "{FeatureExtraction_1.output}"
                 ],
-                "tree": "C:\\Users\\Solaris\\Documents\\programme\\Meshroom-2019.2.0\\aliceVision\\share\\aliceVision\\vlfeat_K80L3.SIFT.tree",
+                "tree": "C:/Users/Solaris/Documents/programme/Meshroom-2019.2.0/aliceVision/share/aliceVision/vlfeat_K80L3.SIFT.tree",
                 "weights": "",
                 "minNbImages": 200,
                 "maxDescriptors": 500,
@@ -117,7 +117,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "d12bbf1c8597e315350b5d42af0eb19df0e0278e"
+                "0": "ad603e44539154d3936a1e962fd894307c42b6eb"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -156,7 +156,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "d9a95b7ba5393eaee7f41e1a5ee4aaadf8ff2594"
+                "0": "2b5e726d8fc6f124e1f5c082ff6d64b33d49fd58"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -209,7 +209,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "ed1c3b8136b4192539ede90ccf27b63f9a3236e8"
+                "0": "ec31e3cbe50b70f9151a0a2e1173eee6a8042fb7"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -238,7 +238,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "e9960fb75d6b3be1d698585cdfebd6cf4cd3700e"
+                "0": "56568c315d528acfa070c547be1467fcdef42081"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -280,7 +280,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "a4a149145fd1e7585f5cb9e66b8877dfe8d06144"
+                "0": "9546e909353d0e42861238e8dd6a0df741fd2f92"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -312,7 +312,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "38e3fea0672af16e1b8d4be1570f2aa14797b662"
+                "0": "81003598a31562c11618dc2924b7a739684c0901"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -338,7 +338,7 @@
                 "simGaussianSize": 10.0,
                 "minAngleThreshold": 1.0,
                 "refineFuse": true,
-                "addLandmarksToTheDensePointCloud": false,
+                "addLandmarksToTheDensePointCloud": true,
                 "colorizeOutput": false,
                 "saveRawDensePointCloud": false,
                 "verboseLevel": "info"
@@ -360,12 +360,12 @@
                 "split": 1
             },
             "uids": {
-                "0": "0d97a4aeceb55f3f60832ca2e70c8f54c0950612"
+                "0": "7b573c69dffdf9d5aab94ae8e9e5bfec272d000d"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
                 "inputMesh": "{Meshing_1.outputMesh}",
-                "removeLargeTrianglesFactor": 2.0,
+                "removeLargeTrianglesFactor": 1.5,
                 "keepLargestMeshOnly": true,
                 "iterations": 0,
                 "lambda": 1.0,
@@ -387,7 +387,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "433c057f43a2054be27f771d4ea22523e1ee493f"
+                "0": "cd5e8d227aa32c3bd9e6458797425df3b4064f17"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
