@@ -38,6 +38,12 @@ ___
 +	change the take_photos_script to use python to interface with compound pi for increased reliability; not a single hang of compound pi since the change. seems to work!
 -	design and virtual test of the final scanner: dev-1-45
 	-	figure out camera positions and do photogrammetry with the virtual cameras to confirm function
+		- using blender: finding out how to
+			+ render
+			+ render fast
+			+ render multiple viewports at the same time
+			+ generate a human model for testing purposes with the scanner (MB Lab, makehuman)
+			- use light sources to emulate LED stript lights
 	-	figure out lighting positions and intensity
 	-	develop a system for controlling the lighting from the command line for easy integration (possibly esp8266 as controller, USB-serial interface for controlling, preferably a cheap uC with arduino support and ethernet. since we need a PSU for the LEDs, we can power the LN from that. maybe i'll do it with the SN's GPIO, depends on how well that goes)
 	-	design easy and cheap to manufacture "pillars" for holding brightness lights, cosmetic lights, SNs, LN in the calculated positions
@@ -62,4 +68,8 @@ ___
 	- meshroom settings
 	- filtering settings
 -	development of GUI for settings and execution (probably with Qt)
+-	designing an emblem for the HSkAnner3D system
+-	making a demo reel that can run on a raspberry pi etc. to show the process of photos to 3d model with the camera panning around the 3d model (using blender?)
+(-	making a finished OS that boots into GUI only)
+(-	making it possible to record 3d video for mocap with blender)
 (-	possible cloud integration for upload and download of scanned models)
