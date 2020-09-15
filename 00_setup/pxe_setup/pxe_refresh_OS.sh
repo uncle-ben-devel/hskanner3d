@@ -8,11 +8,15 @@ if [[ $USER != "root" ]]
 then
 	if [[ $(ping -c 1 -q google.com >&/dev/null; echo $?) == "0" ]]
 	then
-		# cleanup. we remove all remnants of the old install
-			echo "Removing old PXE file system from internal storage."
-			sudo rm -R $HOME/nfs
+		# cleanup. we move all remnants of the old install to a backup directory.
+			timestamp=$(date "+%d-%h-%Y-%T")
+			backupdir="$HOME/pxe_backup/$timestamp"
+			mkdir -p $backupdir/nfs
+			mkdir -p $backupdir/tftpboot
+			echo "Moving old PXE file system from internal storage to the backup directory."
+			sudo mv $HOME/nfs $backupdir/
 			sudo umount $HOME/tftpboot
-			sudo rm -R $HOME/tftpboot
+			sudo mv $HOME/tftpboot $backupdir/tftpboot
 
 		# copying files over to local storage
 			cd
