@@ -4,17 +4,17 @@
         "releaseVersion": "2019.2.0",
         "fileVersion": "1.1",
         "nodesVersions": {
-            "StructureFromMotion": "2.0",
-            "PrepareDenseScene": "3.0",
-            "FeatureExtraction": "1.1",
-            "DepthMap": "2.0",
-            "Texturing": "5.0",
-            "ImageMatching": "1.0",
-            "FeatureMatching": "2.0",
-            "CameraInit": "2.0",
             "DepthMapFilter": "3.0",
+            "StructureFromMotion": "2.0",
+            "Texturing": "5.0",
             "Meshing": "3.0",
-            "MeshFiltering": "2.0"
+            "PrepareDenseScene": "3.0",
+            "CameraInit": "2.0",
+            "MeshFiltering": "2.0",
+            "ImageMatching": "1.0",
+            "DepthMap": "2.0",
+            "FeatureExtraction": "1.1",
+            "FeatureMatching": "2.0"
         }
     },
     "graph": {
@@ -57,14 +57,13 @@
                 "split": 0
             },
             "uids": {
-                "0": "fd75bf97ca6bcfaa797a42fb2b19bc5bc2afd59b"
+                "0": "5f921e77dcd70abe7152683a5e847f1319d50e6e"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
                 "input": "{CameraInit_1.output}",
                 "describerTypes": [
-                    "sift",
-                    "akaze"
+                    "sift"
                 ],
                 "describerPreset": "ultra",
                 "forceCpuExtraction": true,
@@ -86,7 +85,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "c998eb953b85ee749cf0f52de5c17b3c0634e0d7"
+                "0": "943a219d5637565076160ea9b8c9f3a54de3addb"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -117,7 +116,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "ad603e44539154d3936a1e962fd894307c42b6eb"
+                "0": "eb332a8ff450f3c3f7bc835598dfd13d6073b465"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -125,8 +124,7 @@
                 "featuresFolders": "{ImageMatching_1.featuresFolders}",
                 "imagePairsList": "{ImageMatching_1.output}",
                 "describerTypes": [
-                    "sift",
-                    "akaze"
+                    "sift"
                 ],
                 "photometricMatchingMethod": "ANN_L2",
                 "geometricEstimator": "acransac",
@@ -156,7 +154,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "2b5e726d8fc6f124e1f5c082ff6d64b33d49fd58"
+                "0": "b3922577f9461607c5afa86d9f1a89adb1aee421"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -166,8 +164,7 @@
                     "{FeatureMatching_1.output}"
                 ],
                 "describerTypes": [
-                    "sift",
-                    "akaze"
+                    "sift"
                 ],
                 "localizerEstimator": "acransac",
                 "localizerEstimatorMaxIterations": 4096,
@@ -209,7 +206,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "ec31e3cbe50b70f9151a0a2e1173eee6a8042fb7"
+                "0": "a657ac82def1d10748fb0ce2fef34de5437748a5"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -238,7 +235,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "56568c315d528acfa070c547be1467fcdef42081"
+                "0": "f419b73395e69ce5693ef3f6c7511b304a5b2fbe"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -280,7 +277,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "9546e909353d0e42861238e8dd6a0df741fd2f92"
+                "0": "3a6c449a64dc203698da4dc1efe847f2687edd78"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -312,7 +309,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "81003598a31562c11618dc2924b7a739684c0901"
+                "0": "fd4fd5e8b4596a9430c1e94611d17f557b346b76"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -360,7 +357,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "7b573c69dffdf9d5aab94ae8e9e5bfec272d000d"
+                "0": "bb0fea8e629e65c5b9b60ecfa15ffa7d50d2b0da"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -387,7 +384,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "cd5e8d227aa32c3bd9e6458797425df3b4064f17"
+                "0": "ff8778bca52c055f8486f479c8e8ad8d6084c321"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
