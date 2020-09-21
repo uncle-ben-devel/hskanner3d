@@ -4,17 +4,19 @@
         "releaseVersion": "2019.2.0",
         "fileVersion": "1.1",
         "nodesVersions": {
-            "DepthMapFilter": "3.0",
-            "StructureFromMotion": "2.0",
             "Texturing": "5.0",
-            "Meshing": "3.0",
             "PrepareDenseScene": "3.0",
             "CameraInit": "2.0",
-            "MeshFiltering": "2.0",
+            "FeatureMatching": "2.0",
+            "StructureFromMotion": "2.0",
             "ImageMatching": "1.0",
+            "MeshDecimate": "1.0",
+            "MeshDenoising": "1.0",
             "DepthMap": "2.0",
+            "Meshing": "3.0",
+            "MeshFiltering": "2.0",
             "FeatureExtraction": "1.1",
-            "FeatureMatching": "2.0"
+            "DepthMapFilter": "3.0"
         }
     },
     "graph": {
@@ -57,13 +59,14 @@
                 "split": 0
             },
             "uids": {
-                "0": "5f921e77dcd70abe7152683a5e847f1319d50e6e"
+                "0": "fd75bf97ca6bcfaa797a42fb2b19bc5bc2afd59b"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
                 "input": "{CameraInit_1.output}",
                 "describerTypes": [
-                    "sift"
+                    "sift",
+                    "akaze"
                 ],
                 "describerPreset": "ultra",
                 "forceCpuExtraction": true,
@@ -85,7 +88,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "943a219d5637565076160ea9b8c9f3a54de3addb"
+                "0": "c998eb953b85ee749cf0f52de5c17b3c0634e0d7"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -116,7 +119,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "eb332a8ff450f3c3f7bc835598dfd13d6073b465"
+                "0": "e0ddb18aa519a2cb78bf332ee7bbdf2accb30298"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -154,7 +157,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "b3922577f9461607c5afa86d9f1a89adb1aee421"
+                "0": "3fc9d4e5c4b3e80671a795a8ed71b2de0a6629f2"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -206,7 +209,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "a657ac82def1d10748fb0ce2fef34de5437748a5"
+                "0": "46cc9bab171b5a53b57c1c060570406be40cf830"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -235,13 +238,13 @@
                 "split": 0
             },
             "uids": {
-                "0": "f419b73395e69ce5693ef3f6c7511b304a5b2fbe"
+                "0": "ccbaaff47b1e500fecd05de55022e9934e6386b0"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
                 "input": "{PrepareDenseScene_1.input}",
                 "imagesFolder": "{PrepareDenseScene_1.output}",
-                "downscale": 2,
+                "downscale": 1,
                 "minViewAngle": 2.0,
                 "maxViewAngle": 70.0,
                 "sgmMaxTCams": 10,
@@ -277,7 +280,7 @@
                 "split": 0
             },
             "uids": {
-                "0": "3a6c449a64dc203698da4dc1efe847f2687edd78"
+                "0": "b7980e502b8f69a980f73be26190124472c85c44"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -309,7 +312,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "fd4fd5e8b4596a9430c1e94611d17f557b346b76"
+                "0": "13fb80bb62565ba55e304cbef88234ccd09777d8"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -357,12 +360,12 @@
                 "split": 1
             },
             "uids": {
-                "0": "bb0fea8e629e65c5b9b60ecfa15ffa7d50d2b0da"
+                "0": "56f6a9698a5914e014d201dcf6fd906dcba8cd3e"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
                 "inputMesh": "{Meshing_1.outputMesh}",
-                "removeLargeTrianglesFactor": 1.5,
+                "removeLargeTrianglesFactor": 5.0,
                 "keepLargestMeshOnly": true,
                 "iterations": 0,
                 "lambda": 1.0,
@@ -375,7 +378,7 @@
         "Texturing_1": {
             "nodeType": "Texturing",
             "position": [
-                1550,
+                1860,
                 0
             ],
             "parallelization": {
@@ -384,13 +387,13 @@
                 "split": 1
             },
             "uids": {
-                "0": "ff8778bca52c055f8486f479c8e8ad8d6084c321"
+                "0": "d3b7c7123af5add7995b4649656e64bc39141bbb"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
                 "input": "{Meshing_1.output}",
                 "imagesFolder": "{DepthMap_1.imagesFolder}",
-                "inputMesh": "{MeshFiltering_1.outputMesh}",
+                "inputMesh": "{MeshDecimate_1.output}",
                 "textureSide": 8192,
                 "downscale": 1,
                 "outputTextureFileType": "png",
@@ -420,6 +423,64 @@
                 "outputMesh": "{cache}/{nodeType}/{uid0}/texturedMesh.obj",
                 "outputMaterial": "{cache}/{nodeType}/{uid0}/texturedMesh.mtl",
                 "outputTextures": "{cache}/{nodeType}/{uid0}/texture_*.{outputTextureFileTypeValue}"
+            }
+        },
+        "MeshDenoising_1": {
+            "nodeType": "MeshDenoising",
+            "position": [
+                1550,
+                0
+            ],
+            "parallelization": {
+                "blockSize": 0,
+                "size": 1,
+                "split": 1
+            },
+            "uids": {
+                "0": "38efb2c9b5c465298bee8da6e233bf854a502614"
+            },
+            "internalFolder": "{cache}/{nodeType}/{uid0}/",
+            "inputs": {
+                "input": "{MeshFiltering_1.outputMesh}",
+                "denoisingIterations": 1,
+                "meshUpdateClosenessWeight": 0.001,
+                "lambda": 0.5,
+                "eta": 1.5,
+                "mu": 1.5,
+                "nu": 0.3,
+                "meshUpdateMethod": 0,
+                "verboseLevel": "info"
+            },
+            "outputs": {
+                "output": "{cache}/{nodeType}/{uid0}/mesh.obj"
+            }
+        },
+        "MeshDecimate_1": {
+            "nodeType": "MeshDecimate",
+            "position": [
+                1705,
+                0
+            ],
+            "parallelization": {
+                "blockSize": 0,
+                "size": 1,
+                "split": 1
+            },
+            "uids": {
+                "0": "935aced3eb0ab4b13c88f493d827cae89c11217e"
+            },
+            "internalFolder": "{cache}/{nodeType}/{uid0}/",
+            "inputs": {
+                "input": "{MeshDenoising_1.output}",
+                "simplificationFactor": 0.1,
+                "nbVertices": 0,
+                "minVertices": 0,
+                "maxVertices": 0,
+                "flipNormals": false,
+                "verboseLevel": "info"
+            },
+            "outputs": {
+                "output": "{cache}/{nodeType}/{uid0}/mesh.obj"
             }
         }
     }
