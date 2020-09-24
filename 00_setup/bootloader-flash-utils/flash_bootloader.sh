@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $USER = "root" ]
+if [ "$USER" = "root" ]
 then
 	# update firmware for better power performance
 	if [[ $(ping -c 1 -q google.com >&/dev/null; echo $?) == "0" ]]

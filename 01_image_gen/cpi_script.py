@@ -56,7 +56,7 @@ def main(argv):
         client.servers.find(9)
         assert len(client.servers) == 9
         print('Configuring servers')
-        client.resolution(3280,2464)
+        client.resolution(3280,2464)	# max res for camera module v2. see https://www.raspberrypi.org/documentation/hardware/camera/
         client.agc('auto')
         client.awb(whitebalance)
         client.iso(isosetting)

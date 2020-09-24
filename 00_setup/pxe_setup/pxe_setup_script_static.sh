@@ -24,10 +24,10 @@ then
 
 		# static setup
 		echo "$HOME/nfs/raspi_v0 *(rw,sync,no_subtree_check,no_root_squash)" | sudo tee -a /etc/exports
-		sudo mkdir -p $HOME/tftpboot
+		sudo mkdir -p "$HOME"/tftpboot
 		echo "$HOME/nfs/raspi_v0/boot $HOME/tftpboot none defaults,bind 0 0" | sudo tee -a /etc/fstab
-		sudo mount $HOME/tftpboot
-		sudo chmod 777 $HOME/tftpboot
+		sudo mount "$HOME"/tftpboot
+		sudo chmod 777 "$HOME"/tftpboot
 
 		sudo systemctl enable rpcbind
 		sudo systemctl enable nfs-kernel-server
@@ -51,7 +51,7 @@ then
 		echo
 		echo "Please search for Network. Then go to Network > Wired > Settings (Cogwheel) > IPv4 > Set IPv4 Method to Manual > Set Adress to 192.168.128.2 > Set to Netmask 255.255.255.0 > Leave Gateway empty > apply and reboot the computer."
 
-		cd
+		cd || exit 1 # if cd fails
 	else
 		echo "You are not connected to the internet. Please connect to a network to proceed."
 	fi

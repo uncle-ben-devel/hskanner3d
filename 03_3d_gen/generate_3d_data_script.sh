@@ -7,6 +7,7 @@ rm -R /tmp/MeshroomCache	# delete old data in the cache
 printf "This script generates 3D data from photos. Command line flag options:
 	[-i] Input directory
 	[-o] Output directory
+	[-m] Meshroom root directory, path from root
 	[-p] Pipeline file name
 	[-d] Pipeline directory
 	[-v] Open the created .obj file in Meshlab after computing it
@@ -23,12 +24,13 @@ printf "This script generates 3D data from photos. Command line flag options:
 # config via flags, to overwrite default settings
 # tutorial at https://www.lifewire.com/pass-arguments-to-bash-script-2200571
 	openobj=0	# will open meshlab and the created .obj if true
-	while getopts i:o:p:d:v: option
+	while getopts i:o:m:p:d:v: option
 	do
 		case "${option}"
 		in
 			i) input_dir="${OPTARG}";;	# override input directory
 			o) output_dir="${OPTARG}";;	# override output directory
+			m) meshroomroot="${OPTARG}";;	# override Meshroom root directory
 			p) pipeline_file="${OPTARG}";;	# override pipeline file name
 			d) pipeline_dir="${OPTARG}";;	# override pipeline directory
 			v) openobj="${OPTARG}";;
@@ -39,7 +41,7 @@ printf "This script generates 3D data from photos. Command line flag options:
 
 
 # execute the command in meshroom
-	$meshroomroot/./meshroom_photogrammetry --pipeline "$pipeline_full" --output "$output_dir"  --input "$input_dir"
+	"$meshroomroot"/./meshroom_photogrammetry --pipeline "$pipeline_full" --output "$output_dir"  --input "$input_dir"
 # check if there were no errors in the pipeline by checking if the output directory exists
 	if test -d "$output_dir"; then
 		echo "Task completed successfully."
@@ -53,11 +55,11 @@ printf "This script generates 3D data from photos. Command line flag options:
 	then
 		if test -f "$output_dir/sfm.ply"
 		then
-			nohup meshlab $output_dir/sfm.ply > /dev/null 2>&1 &
+			nohup meshlab "$output_dir"/sfm.ply > /dev/null 2>&1 &
 		fi
 
 		if test -f "$output_dir/texturedMesh.obj"
 		then
-			nohup meshlab $output_dir/texturedMesh.obj > /dev/null 2>&1 &
+			nohup meshlab "$output_dir"/texturedMesh.obj > /dev/null 2>&1 &
 		fi
 	fi

@@ -40,6 +40,6 @@ clear
 
 # execution
 	echo "DO NOT run this immediately after booting. The NTP client on the sensor nodes needs some time to sync up!"
-	mkdir -p $i_path # output path will be created by meshroom, if it succeeds.
-	$tps_path/take_photos_script.sh -s $shutterspeed -i $isosetting -b $whitebalance -o $i_path -t $selftimer -f $openfilebrowser -r $rotation
-	$tdgs_path/generate_3d_data_script.sh -i $i_path -o $o_path -p $pipeline_file -d $pipe_path -v $view_mesh
+	mkdir -p "$i_path" # output path will be created by meshroom, if it succeeds.
+	"$tps_path"/take_photos_script.sh -s $shutterspeed -i $isosetting -b $whitebalance -o "$i_path" -t $selftimer -f $openfilebrowser -r $rotation
+	"$tdgs_path"/generate_3d_data_script.sh -i "$i_path" -o "$o_path" -m "$meshroomroot" -p $pipeline_file -d "$pipe_path" -v $view_mesh
