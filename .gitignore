@@ -1,6 +1,6 @@
-03_3d_gen/MeshroomCache/
+*/MeshroomCache/
 10_input_dir/
 11_output_dir/
-20_position_estimation/MeshroomCache
 20_position_estimation/render
-20_position_estimation/*.blend1
+*/*.blend1
+*/*.FCStd1
