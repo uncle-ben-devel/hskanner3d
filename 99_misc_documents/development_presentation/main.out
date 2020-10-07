@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{What is HSkAnner3D?}{}% 1
+\BOOKMARK [1][-]{section.2}{System Architecture}{}% 2
+\BOOKMARK [1][-]{section.3}{Why is it necessary to build HSkAnner3D?}{}% 3
+\BOOKMARK [1][-]{section.4}{How does HSkAnner3D work? The operation principle of the system}{}% 4
+\BOOKMARK [1][-]{section.5}{How are we going to archive the goal?}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{Introduction, Overview}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{Software development rig}{section.5}% 7
+\BOOKMARK [2][-]{subsection.5.3}{Setting up the required software}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.4}{Automation of the processing chain}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.5}{Design of the final scanning array with all 45 cameras and lighting}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.6}{Ensuring good physical design}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.7}{Building one tower}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.8}{Single tower calibration}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.9}{Lighting control from the AS}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.10}{Building of remaining towers}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.11}{Calibration of towers}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.12}{GUI for scanner control}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.13}{Documentation and Praxissemesterbericht}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.14}{Promotional material}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.15}{Additional features}{section.5}% 20

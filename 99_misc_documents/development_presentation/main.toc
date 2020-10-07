@@ -1,0 +1,21 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}What is HSkAnner3D?}{2}{section.1}% 
+\contentsline {section}{\numberline {2}System Architecture}{3}{section.2}% 
+\contentsline {section}{\numberline {3}Why is it necessary to build HSkAnner3D?}{3}{section.3}% 
+\contentsline {section}{\numberline {4}How does HSkAnner3D work? The operation principle of the system}{4}{section.4}% 
+\contentsline {section}{\numberline {5}How are we going to archive the goal?}{5}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Introduction, Overview}{5}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Software development rig}{5}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}Setting up the required software}{6}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}Automation of the processing chain}{6}{subsection.5.4}% 
+\contentsline {subsection}{\numberline {5.5}Design of the final scanning array with all 45 cameras and lighting}{7}{subsection.5.5}% 
+\contentsline {subsection}{\numberline {5.6}Ensuring good physical design}{7}{subsection.5.6}% 
+\contentsline {subsection}{\numberline {5.7}Building one tower}{7}{subsection.5.7}% 
+\contentsline {subsection}{\numberline {5.8}Single tower calibration}{7}{subsection.5.8}% 
+\contentsline {subsection}{\numberline {5.9}Lighting control from the AS}{8}{subsection.5.9}% 
+\contentsline {subsection}{\numberline {5.10}Building of remaining towers}{8}{subsection.5.10}% 
+\contentsline {subsection}{\numberline {5.11}Calibration of towers}{8}{subsection.5.11}% 
+\contentsline {subsection}{\numberline {5.12}GUI for scanner control}{8}{subsection.5.12}% 
+\contentsline {subsection}{\numberline {5.13}Documentation and Praxissemesterbericht}{9}{subsection.5.13}% 
+\contentsline {subsection}{\numberline {5.14}Promotional material}{9}{subsection.5.14}% 
+\contentsline {subsection}{\numberline {5.15}Additional features}{9}{subsection.5.15}% 
