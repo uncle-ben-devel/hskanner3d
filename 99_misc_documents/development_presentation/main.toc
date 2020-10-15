@@ -7,15 +7,15 @@
 \contentsline {subsection}{\numberline {5.1}Introduction, Overview}{5}{subsection.5.1}% 
 \contentsline {subsection}{\numberline {5.2}Software development rig}{5}{subsection.5.2}% 
 \contentsline {subsection}{\numberline {5.3}Setting up the required software}{6}{subsection.5.3}% 
-\contentsline {subsection}{\numberline {5.4}Automation of the processing chain}{6}{subsection.5.4}% 
+\contentsline {subsection}{\numberline {5.4}Automation of the processing chain}{7}{subsection.5.4}% 
 \contentsline {subsection}{\numberline {5.5}Design of the final scanning array with all 45 cameras and lighting}{7}{subsection.5.5}% 
-\contentsline {subsection}{\numberline {5.6}Ensuring good physical design}{7}{subsection.5.6}% 
-\contentsline {subsection}{\numberline {5.7}Building one tower}{7}{subsection.5.7}% 
-\contentsline {subsection}{\numberline {5.8}Single tower calibration}{7}{subsection.5.8}% 
-\contentsline {subsection}{\numberline {5.9}Lighting control from the AS}{8}{subsection.5.9}% 
-\contentsline {subsection}{\numberline {5.10}Building of remaining towers}{8}{subsection.5.10}% 
-\contentsline {subsection}{\numberline {5.11}Calibration of towers}{8}{subsection.5.11}% 
-\contentsline {subsection}{\numberline {5.12}GUI for scanner control}{8}{subsection.5.12}% 
-\contentsline {subsection}{\numberline {5.13}Documentation and Praxissemesterbericht}{9}{subsection.5.13}% 
-\contentsline {subsection}{\numberline {5.14}Promotional material}{9}{subsection.5.14}% 
-\contentsline {subsection}{\numberline {5.15}Additional features}{9}{subsection.5.15}% 
+\contentsline {subsection}{\numberline {5.6}Ensuring good physical design}{9}{subsection.5.6}% 
+\contentsline {subsection}{\numberline {5.7}Building one tower}{10}{subsection.5.7}% 
+\contentsline {subsection}{\numberline {5.8}Single tower calibration}{10}{subsection.5.8}% 
+\contentsline {subsection}{\numberline {5.9}Lighting control from the AS}{10}{subsection.5.9}% 
+\contentsline {subsection}{\numberline {5.10}Building of remaining towers}{10}{subsection.5.10}% 
+\contentsline {subsection}{\numberline {5.11}Calibration of towers}{10}{subsection.5.11}% 
+\contentsline {subsection}{\numberline {5.12}GUI for scanner control}{11}{subsection.5.12}% 
+\contentsline {subsection}{\numberline {5.13}Documentation and Praxissemesterbericht}{11}{subsection.5.13}% 
+\contentsline {subsection}{\numberline {5.14}Promotional material}{11}{subsection.5.14}% 
+\contentsline {subsection}{\numberline {5.15}Additional features}{11}{subsection.5.15}% 
