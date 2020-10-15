@@ -27,6 +27,14 @@ The timeline is as follows:
 		\item one gigabit network switch, PoE capable to connect the SN with the CN and AS
 		\item one compute node (CN) and one array server (AS): AS for controlling the SN and getting the images, CN for calculation of the 3D model from the 2D data - In this setup, CN and AS share the same hardware
 	\end{itemize}
+
+	Since it has one CN, one AS, and nine SN, the setup is dubbed \enquote{dev-1-1-9}.	
+	
+	\begin{figure}[H]
+        \centerline{\includegraphics[width=\linewidth]{how/software-devel-rig-1-1-9.jpg}}
+        \caption{The software development rig, set up for scanning a stone.}
+    \label{software-devel-rig}
+    \end{figure}
 	
 \subsection{Setting up the required software}
 	For the scanner to function as such, software has to be set up.
@@ -52,6 +60,24 @@ The timeline is as follows:
 		\item all of the above, but with one command in total
 	\end{itemize}
 	
+	Once that is completed, it is now possible to create a scan with the execution of a single script. Results from the early scans, done by dev-1-1-9, can be seen in figure \ref{stone-mesh} and \ref{face-mesh}.
+	
+	\begin{figure}[H]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+    			\includegraphics[width=.95\linewidth]{how/stone-meshed.jpg}
+    			\captionof{figure}{The stone, meshed using image data from the software development rig.}
+    			\label{stone-mesh}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+    			\includegraphics[width=.95\linewidth]{how/headscan-devel-rig.jpg}
+	    		\captionof{figure}{My face, meshed using image data from dev-1-1-9.}
+	    \label{face-mesh}
+		\end{minipage}
+	\end{figure}
+	
 \subsection{Design of the final scanning array with all 45 cameras and lighting}
 	Once the software has been set up for the basic operation using a single command, the final scanning array can be designed. There are a number of substeps that go into the design process:
 	\begin{itemize}
@@ -60,7 +86,7 @@ The timeline is as follows:
 		\item find out whether LED striplights or spots are more suitable for the job
 		\item design a physical construction concept that is
 		\begin{itemize}
-			\item cheap (after the development setup build, we have $3275.13$\euro left from our $5000$\euro budget. We need $35$\euro more SN at a cost of $52.61$\euro each, and we want to build $9$ towers, so the total budget per tower is $160.53$\euro, or about $150$\euro with an included buffer)
+			\item cheap (after the development setup build, we have $3275.13$\euro{} left from our $5000$\euro{} budget. We need $35$\euro{} more SN at a cost of $52.61$\euro{} each, and we want to build $9$ towers, so the total budget per tower is $160.53$\euro{}, or about $150$\euro{} with an included buffer)
 			\item easy to manufacture
 			\item solid in the long term (no deformation or degradation that jeopardizes the system integrity)
 			\item easy to adjust
@@ -69,6 +95,30 @@ The timeline is as follows:
 			\item portable when split into its modules
 		\end{itemize}
 	\end{itemize}
+	
+	\subsubsection{Array layout design}
+	To estimate the camera and lighting positions, a simulation was performed using Blender, see figure \ref{blender-sim}. After rendering the $45$ $8MP$ views with $128$ passes and the minimum amount of bounces in Blender - which takes about four hours for a full run on a RTX 2070 using OptiX - the images are loaded into meshroom to recalculate the mesh from the images in high quality. This process takes up to two hours on a Ryzen 5 3600 and an RTX 2070. While lengthy, the simulation helped define the following constraints for the scanning array:
+	\begin{itemize}
+		\item radius of the scanning circle: $1m$, limited by the space constraints in the lab. A bigger radius means more overlap between images, a smaller radius means more detail but less overlap and possibly problems with too thin of a depth of field. We only have around $45$ cameras to cover a $360d$, $2m$ height cylinder, so we need the overlap for the images to align in the photogrammetry software.
+		\item maximum allowed angle between towers to align to the neighboring tower as seen from the center: about $40d$. Smaller angles are better, since there is more overlap in the x-axis of the image. However, since the number of cameras is limited and more towers are more costly, $40d$ was chosen as a sweet spot between tower amounts and tower alignment robustness. The three towers closest to the facial region are only $30d$ apart to increase the camera density and to open the array around back by $20d$ so that entering the array is easier.
+		\item camera position and spread across towers: 4-4-5-6-7-6-5-4-4 (9 towers), with the higher amount of cameras in the facial region, and the least amount around the back, since there is less detail in that area compared to the face. The camera and tower position is described in further detail in figure \ref{array-layout-paper}.
+		\item camera angle: depending on the camera height. The cameras are angled so that every camera has the most amount of the subject in the frame.
+	\end{itemize}
+	
+	\begin{figure}[H]
+        \centerline{\includegraphics[width=\linewidth]{how/blender-sim.jpg}}
+        \caption{Simulation in Blender using 45 cameras and 15 light sources simulating LED strips}
+    \label{blender-sim}
+    \end{figure}
+    
+    	\begin{figure}[H]
+        \centerline{\includegraphics[width=\linewidth]{how/array-layout-paper.jpg}}
+        \caption{Final layout and camera angles for the scanning array, estimated using Blender simulation.}
+    \label{array-layout-paper}
+    \end{figure}
+    
+    \subsection{Tower design}
+	
 	
 \subsection{Ensuring good physical design}	
 	Since mechanical engineering is not my field of expertise, the design of the physical structures will be talked trough with the workshop people to find the correct
