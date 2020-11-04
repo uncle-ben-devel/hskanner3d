@@ -1,8 +1,11 @@
-*/MeshroomCache/
-10_input_dir/
-11_output_dir/
-20_position_estimation/render
+*/*/MeshroomCache/
+processing_chain/1*
+design/position_estimation/render
 *.blend1
 *.FCStd1
 *.stp
 *.step
+*.jpg
+*.obj
+*.ply
+*.abc
