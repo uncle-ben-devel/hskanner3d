@@ -7,6 +7,7 @@ from gpiozero import Button
 import board
 import neopixel
 import numpy as np
+import sys
 
 # LED strip configuration:
 LED_COUNT   = 13      # Number of LED pixels.
@@ -18,26 +19,32 @@ delaytime = 2	# seconds to wait between color switching
 # Create NeoPixel object with appropriate configuration.
 strip = neopixel.NeoPixel(LED_PIN, LED_COUNT, brightness = LED_BRIGHTNESS, auto_write=False, pixel_order = LED_ORDER)
 
+def striptest(strip):
+    strip.fill((255,0,0,0))
+    strip.show()
+    time.sleep(delaytime)
 
-strip.fill((255,0,0,0))
-strip.show()
-time.sleep(delaytime)
+    strip.fill((0,255,0,0))
+    strip.show()
+    time.sleep(delaytime)
 
-strip.fill((0,255,0,0))
-strip.show()
-time.sleep(delaytime)
+    strip.fill((0,0,255,0))
+    strip.show()
+    time.sleep(delaytime)
 
-strip.fill((0,0,255,0))
-strip.show()
-time.sleep(delaytime)
+    strip.fill((0,0,0,255))
+    strip.show()
+    time.sleep(delaytime)
 
-strip.fill((0,0,0,255))
-strip.show()
-time.sleep(delaytime)
+    strip.fill((255,255,255,255))
+    strip.show()
+    time.sleep(delaytime)
 
-strip.fill((255,255,255,255))
-strip.show()
-time.sleep(delaytime)
-
-strip.fill((0,0,0,0))
-strip.show()
+try:
+    striptest(strip)
+except:
+    print("An error occured or the execution of this script was cancelled.")
+finally:
+    strip.fill((0,0,0,0))
+    strip.show()
+    sys.exit()
