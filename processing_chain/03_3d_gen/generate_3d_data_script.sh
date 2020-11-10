@@ -4,9 +4,11 @@
 	rm -R /tmp/MeshroomCache	# delete old data in the cache
 	printf "\n\n\n\nSetting up generation of 3D data...\n"
 	# load config file
-	cd "$(dirname "$(readlink -f "$0")")"
+    localpath="$(dirname "$(readlink -f "$0")")"
+	cd "$localpath"
 	cd ..
 	. hskanner.config
+    cd "$localpath"
 	
 	pipe_path="$workpath"/03_3d_gen/"$pipe_file"
 	inputdir="$workpath"/11_image_filter_out/"$timestamp"

@@ -1,9 +1,11 @@
 #!/bin/bash
 	printf "\n\n\n\nSetting up filtering of 3D data...\n"
 	# load config file
-	cd "$(dirname "$(readlink -f "$0")")"
+    localpath="$(dirname "$(readlink -f "$0")")"
+	cd "$localpath"
 	cd ..
 	. hskanner.config
+    cd "$localpath"
 
 	inputdir="$workpath"/12_3d_gen_out/"$timestamp"
 	outputdir="$workpath"/13_3d_filter_out/"$timestamp"

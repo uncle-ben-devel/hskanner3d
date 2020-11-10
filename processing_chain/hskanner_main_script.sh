@@ -7,7 +7,9 @@ clear
 
 # execution
 	echo "DO NOT run this immediately after booting. The NTP client on the sensor nodes needs some time to sync up!"
+    python3.7 "$workpath"/00_lighting_control/lighting_client.py "all_on"
 	"$workpath"/01_image_gen/take_photos_script.sh
+    python3.7 "$workpath"/00_lighting_control/lighting_client.py "comet_effect"
 	"$workpath"/02_image_filter/image_filter_script.sh
 	"$workpath"/03_3d_gen/generate_3d_data_script.sh
-	"$workpath"/04_3d_filter/filter_3d_data_script.sh
+	"$workpath"/04_3d_filter/filter_3d_data_script.sh  

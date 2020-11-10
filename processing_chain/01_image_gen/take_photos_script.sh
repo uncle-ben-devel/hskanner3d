@@ -3,9 +3,11 @@
 # settings available can be taken from https://compoundpi.readthedocs.io/en/release-0.4/commands.html
 	printf "\n\n\n\nSetting up capture...\n"
 	# load config file
-	cd "$(dirname "$(readlink -f "$0")")"
+    localpath="$(dirname "$(readlink -f "$0")")"
+	cd "$localpath"
 	cd ..
 	. hskanner.config
+    cd "$localpath"
 
 	outputdir="$workpath"/10_image_gen_out/"$timestamp"
 

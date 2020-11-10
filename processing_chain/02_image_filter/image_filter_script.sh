@@ -2,9 +2,11 @@
 # This script filters the captured jpgs
 	printf "\n\n\n\nSetting up image filtering...\n"
 	# load config file
-	cd "$(dirname "$(readlink -f "$0")")"
+    localpath="$(dirname "$(readlink -f "$0")")"
+	cd "$localpath"
 	cd ..
 	. hskanner.config
+    cd "$localpath"
 
 	inputdir="$workpath"/10_image_gen_out/"$timestamp"
 	outputdir="$workpath"/11_image_filter_out/"$timestamp"
