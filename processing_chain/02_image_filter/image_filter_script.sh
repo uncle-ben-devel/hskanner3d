@@ -1,22 +1,17 @@
 #!/bin/bash
 # This script filters the captured jpgs
-	printf "\n\n\n\nSetting up image filtering...\n"
-	# load config file
-    localpath="$(dirname "$(readlink -f "$0")")"
-	cd "$localpath"
-	cd ..
-	. hskanner.config
-    cd "$localpath"
 
-	inputdir="$workpath"/10_image_gen_out/"$timestamp"
-	outputdir="$workpath"/11_image_filter_out/"$timestamp"
+	inputdir="$1"
+	outputdir="$2"
+    rotation="$3"
 	
 	# filter
 	if [ -d "$outputdir" ]; then
 		echo "Output directory already exists. Removing old one."
 		rm -R $outputdir
 	fi
-	cp -r "$inputdir" "$outputdir"
+    mkdir -p "$outputdir"
+	cp -R "$inputdir" "$outputdir/.."
 	
 	if (( rotation ))	# if it's anything but zero degrees, we rotate.
 	then
