@@ -2,10 +2,12 @@
 
 # this script will call meshroom functions to generate 3d data depending on the pipeline file used, and then open the generated model in meshlab (you need Meshlab installed for that to work)
 	rm -R /tmp/MeshroomCache	# delete old data in the cache
-	
-	pipe_path="$1"
-	inputdir="$2"
-	outputdir="$3"
+
+    meshroomroot="$1"	
+	pipe_path="$2"
+	inputdir="$3"
+	outputdir="$4"
+    view_mesh="$5"
 
 	if [ -d "$outputdir" ]; then
 		echo "Output directory already exists. Removing old one."
