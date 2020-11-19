@@ -4,7 +4,6 @@ from os import chdir
 from time import gmtime, strftime
 import configparser, subprocess, os
 
-
 class hska3d:
     def __init__(self):
         chdir("/")
@@ -38,12 +37,12 @@ class hska3d:
         self.openfilebrowser = self.customs_obj.get('openfilebrowser')
         self.view_mesh = self.customs_obj.get('view_mesh')
 
-    def exec_command(self,command):
+    def exec_command(self, command):
         print("Executing \'", command, "\'.")
         process = subprocess.run(command, shell=True)
         print("_")
 
-    def exec_async(self,command):
+    def exec_async(self, command):
         print("Executing \'", command, "\'.")
         process = subprocess.Popen(command, shell=True)
         print("_")
@@ -55,7 +54,7 @@ class hska3d:
         # take photos
         self.exec_command("python2 " + self.workpath + "/01_image_gen/cpi_capture.py " + "\"" + self.number_sensor_nodes + "\" \"" + self.image_gen_out_dir + "\" \"" + self.network_subnet + "\" \"" + self.selftimer + "\"")
         # change lights to idle mode
-        self.exec_command("python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"comet_effect.py\"")
+        self.exec_command("python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"comet_effect.py 13 5 1 255 255 255 255 0.04\"")
 
     def filter_2d(self):
         # filter images

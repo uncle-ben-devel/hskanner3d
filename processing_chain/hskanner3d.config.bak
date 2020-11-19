@@ -1,0 +1,51 @@
+# this file contains the default settings for the scanner. you can copy it and rename it to hskanner.config for it to be used by the processing chain.
+[default]
+# paths
+ # install directory of meshroom"
+meshroomroot = /home/hskanner3d-dev/Documents/software/Meshroom-2019.2.0-linux/Meshroom-2019.2.0
+#pipe_file=compute_pointcloud.mg
+pipe_file = compute_tex_model.mg
+#timestamp=$(date "+%d-%h-%Y-%T")	# name for the folder where the images will be stored
+timestamp = put-date-or-indexer-in-here-with-gui
+
+# settings
+# taking photos
+# number of cameras connected to the CN
+number_sensor_nodes = 1
+network_subnet = 192.168.128.0/24
+# shutter speed in ms. 16.67ms equals about 1/60s.
+shutterspeed = 16.67
+# ISO. Max is 1600, Min is 50.
+isosetting = 100
+# auto cloudy flash fluorescent horizon incandescent shade sunlight tungsten or red / blue gain in floating point (typical between 1.0 and 2.0)
+whitebalance = auto
+# waiting time before capture in seconds. Base wait time is always 0.5s to make a sync capture possible.
+selftimer = 0.0
+#Rotate the output images by 0, 90, 180 or 270 degrees.
+rotation = 180
+# processing photos
+# bool if the filebrowser should be opened after the shots are taken
+openfilebrowser = 1
+# generating 3d data
+# if 0, will not open meshlab to view the generated mesh
+view_mesh = 1
+# processing 3d data
+pipe_file_hq = compute_tex_model.mg
+pipe_file_fast = compute_pointcloud.mg
+
+[custom]
+meshroomroot = /home/hskanner3d-dev/Documents/software/Meshroom-2019.2.0-linux/Meshroom-2019.2.0
+pipe_file_hq = compute_tex_model.mg
+pipe_file_fast = compute_pointcloud.mg
+
+number_sensor_nodes = 1
+network_subnet = 192.168.128.0/24
+
+shutterspeed = 16.67
+isosetting = 100
+whitebalance = auto
+selftimer = 0.0
+
+rotation = 180
+openfilebrowser = 1
+view_mesh = 1

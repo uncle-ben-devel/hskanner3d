@@ -1,21 +1,23 @@
 #!/usr/bin/env python
 
 from time import sleep
+from sys import argv
 import board
 import neopixel
 
 # LED strip configuration:
-LED_COUNT   = 13      # Number of LED pixels.
+LED_COUNT   = int(argv[1])      # Number of LED pixels.
+tail_len = int(argv[2]) # the tail will consist of tail_len-1 leds, with one led leading with 100% of what was set for the rgb values.
 LED_PIN     = board.D18      # GPIO pin
-LED_BRIGHTNESS = 1  # LED brightness
+LED_BRIGHTNESS = float(argv[3])  # LED brightness
 LED_ORDER = neopixel.GRBW # order of LED colours. May be GRB, RGB, GRBW, or RGBW
 # effect config
-comet_r = 255
-comet_g = 255
-comet_b = 255
-comet_w = 255
-sleeptime = 0.04    # change this value to adjust the speed of the effect. 0 is no wait in between cycles.
-tail_len = 5 # the tail will consist of tail_len-1 leds, with one led leading with 100% of what was set for the rgb values.
+comet_r = int(argv[4])
+comet_g = int(argv[5])
+comet_b = int(argv[6])
+comet_w = int(argv[7])
+sleeptime = float(argv[8])    # change this value to adjust the speed of the effect. 0 is no wait in between cycles.
+
 
 # Create NeoPixel object with appropriate configuration.
 strip = neopixel.NeoPixel(LED_PIN, LED_COUNT, brightness = LED_BRIGHTNESS, auto_write=False, pixel_order = LED_ORDER)
