@@ -1,6 +1,7 @@
-*/*/MeshroomCache/
+MeshroomCache
 processing_chain/1*
-design/position_estimation/render
+render
+__pycache__
 *.blend1
 *.FCStd1
 *.stp
@@ -9,4 +10,4 @@ design/position_estimation/render
 *.obj
 *.ply
 *.abc
-__pycache__
+
