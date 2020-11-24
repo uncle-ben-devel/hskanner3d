@@ -11,7 +11,7 @@
 
 	if [ -d "$outputdir" ]; then
 		echo "Output directory already exists. Removing old one."
-		rm -R $outputdir
+		rm -R "$outputdir"
 	fi
 # execute the command in meshroom
 	"$meshroomroot"/./meshroom_photogrammetry --pipeline "$pipe_path" --output "$outputdir"  --input "$inputdir"

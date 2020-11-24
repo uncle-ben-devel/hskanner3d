@@ -24,8 +24,8 @@ def main(argv):
         client.servers.find(number_sensor_nodes)
         assert len(client.servers) == number_sensor_nodes
         print('Configuring servers.')
-        #client.resolution(3280,2464)	# max res for camera module v2. see https://www.raspberrypi.org/documentation/hardware/camera/
-        client.resolution(2592,1944)	# max res for camera module v1.
+        client.resolution(3280,2464)	# max res for camera module v2. see https://www.raspberrypi.org/documentation/hardware/camera/
+        #client.resolution(2592,1944)	# max res for camera module v1.
         client.agc('auto')
         client.awb(whitebalance)
         client.iso(isosetting)

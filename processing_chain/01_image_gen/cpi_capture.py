@@ -27,9 +27,9 @@ def main(argv):
 # capture images
 	print '\nWaiting', wait_time, 'second(s) before capture.'
         if wait_time == 0.0:
-            client.capture(count=1,video_port=False,quality=100) # take 1 shot, with the high quality port, at 100% quality. no wait time means no synced capture, but also no dependency on NTP sync.
+            client.capture(count=1,video_port=False,quality=90) # take 1 shot, with the high quality port. no wait time means no synced capture, but also no dependency on NTP sync.
         else:
-            client.capture(count=1,video_port=False,quality=100,delay=wait_time) # take 1 shot, with the high quality port, at 100% quality. wait for user defined wait time to sync captures. NOTE: if the NTP server has not synced the RPi, and the timestamp is in the past, CPI hangs and locks the servers. A reboot of clients and server is needed in that case.
+            client.capture(count=1,video_port=False,quality=90,delay=wait_time) # take 1 shot, with the high quality port. wait for user defined wait time to sync captures. NOTE: if the NTP server has not synced the RPi, and the timestamp is in the past, CPI hangs and locks the servers. A reboot of clients and server is needed in that case.
 # download images
         try:
             for addr, files in client.list().items():
