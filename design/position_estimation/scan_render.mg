@@ -4,19 +4,19 @@
         "releaseVersion": "2019.2.0",
         "fileVersion": "1.1",
         "nodesVersions": {
-            "MeshFiltering": "2.0",
-            "FeatureMatching": "2.0",
-            "Texturing": "5.0",
-            "ImageMatching": "1.0",
-            "DepthMapFilter": "3.0",
-            "MeshDecimate": "1.0",
-            "CameraInit": "2.0",
-            "PrepareDenseScene": "3.0",
-            "MeshDenoising": "1.0",
-            "FeatureExtraction": "1.1",
             "DepthMap": "2.0",
+            "StructureFromMotion": "2.0",
+            "MeshDenoising": "1.0",
+            "FeatureMatching": "2.0",
+            "ImageMatching": "1.0",
+            "CameraInit": "2.0",
+            "MeshFiltering": "2.0",
+            "FeatureExtraction": "1.1",
+            "Texturing": "5.0",
+            "MeshDecimate": "1.0",
+            "DepthMapFilter": "3.0",
             "Meshing": "3.0",
-            "StructureFromMotion": "2.0"
+            "PrepareDenseScene": "3.0"
         }
     },
     "graph": {
@@ -28,421 +28,15 @@
             ],
             "parallelization": {
                 "blockSize": 0,
-                "size": 45,
+                "size": 0,
                 "split": 1
             },
             "uids": {
-                "0": "6a4b8759ff630fc0a326e43d4a6a945946da48f2"
+                "0": "7ace2e3f606aae2339c07b90ce92aea85d0c3da0"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
-                "viewpoints": [
-                    {
-                        "viewId": 9824167,
-                        "poseId": 9824167,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_bb.004.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 16737065,
-                        "poseId": 16737065,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_hb.001.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 18860792,
-                        "poseId": 18860792,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_mt.004.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 50127534,
-                        "poseId": 50127534,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_t.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 69754522,
-                        "poseId": 69754522,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_b.008.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 77760696,
-                        "poseId": 77760696,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_mb.005.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 300692385,
-                        "poseId": 300692385,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_t.002.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 367447628,
-                        "poseId": 367447628,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_bb.008.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 384342986,
-                        "poseId": 384342986,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_b.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 448964408,
-                        "poseId": 448964408,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_bb.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 452022785,
-                        "poseId": 452022785,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_tt.003.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 459563810,
-                        "poseId": 459563810,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_b.001.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 464924407,
-                        "poseId": 464924407,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_bb.005.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 494987865,
-                        "poseId": 494987865,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_hb.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 515362076,
-                        "poseId": 515362076,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_bb.007.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 571322135,
-                        "poseId": 571322135,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_hb.008.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 607924778,
-                        "poseId": 607924778,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_t.007.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 708885029,
-                        "poseId": 708885029,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_m.008.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 722564067,
-                        "poseId": 722564067,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_m.007.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 740977974,
-                        "poseId": 740977974,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_m.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 785652541,
-                        "poseId": 785652541,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_b.002.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 800748633,
-                        "poseId": 800748633,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_tt.002.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 809005701,
-                        "poseId": 809005701,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_mt.006.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 921597562,
-                        "poseId": 921597562,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_bb.006.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 989440845,
-                        "poseId": 989440845,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_ht.001.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1026608606,
-                        "poseId": 1026608606,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_mb.004.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1031549141,
-                        "poseId": 1031549141,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_mb.006.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1043134668,
-                        "poseId": 1043134668,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_tt.008.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1052433887,
-                        "poseId": 1052433887,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_tt.004.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1178868828,
-                        "poseId": 1178868828,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_tt.007.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1208076542,
-                        "poseId": 1208076542,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_mt.005.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1370731954,
-                        "poseId": 1370731954,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_tt.006.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1452913844,
-                        "poseId": 1452913844,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_mb.003.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1465437392,
-                        "poseId": 1465437392,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_tt.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1613653275,
-                        "poseId": 1613653275,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_ht.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1656317180,
-                        "poseId": 1656317180,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_m.002.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1657795592,
-                        "poseId": 1657795592,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_tt.001.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1686204387,
-                        "poseId": 1686204387,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_m.001.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1858691645,
-                        "poseId": 1858691645,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_ht.008.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1899098848,
-                        "poseId": 1899098848,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_bb.001.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1964899695,
-                        "poseId": 1964899695,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_tt.005.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 1991580191,
-                        "poseId": 1991580191,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_bb.002.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 2025919562,
-                        "poseId": 2025919562,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_mt.003.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 2098441778,
-                        "poseId": 2098441778,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_b.007.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    },
-                    {
-                        "viewId": 2105442953,
-                        "poseId": 2105442953,
-                        "path": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/20_position_estimation/render/cauc-stand-nohair-box/0001_bb.003.png",
-                        "intrinsicId": 1111549667,
-                        "rigId": -1,
-                        "subPoseId": -1,
-                        "metadata": "{\"Camera\": \"Camera_tt.008\", \"Date\": \"2020/09/28 19:18:36\", \"File\": \"C:\\\\Users\\\\Solaris\\\\Documents\\\\workspace_ssd\\\\hskanner3d_dev_folder\\\\20_position_estimation\\\\hskanner3d_position_simulation_circle_9T_custom_heightmod.blend\", \"Frame\": \"1\", \"Lens\": \"1.67\", \"RenderTime\": \"07:04:43.16\", \"ResolutionUnit\": \"inch\", \"Scene\": \"Scene\", \"Time\": \"00:00:00:01\", \"XResolution\": \"72.009\", \"YResolution\": \"72.009\", \"cycles\": {\"RenderLayer\": {\"render_time\": \"08:59.82\", \"samples\": \"1024\", \"synchronization_time\": \"06:55:27.37\", \"total_time\": \"07:04:27.19\"}}}"
-                    }
-                ],
+                "viewpoints": [],
                 "intrinsics": [
                     {
                         "intrinsicId": 1111549667,
@@ -463,10 +57,30 @@
                             0.0
                         ],
                         "locked": false
+                    },
+                    {
+                        "intrinsicId": 2319927017,
+                        "pxInitialFocalLength": -1.0,
+                        "pxFocalLength": 1989.4790867124098,
+                        "type": "radial3",
+                        "width": 2464,
+                        "height": 3280,
+                        "serialNumber": "C:/Users/Solaris/Documents/workspace_ssd/hskanner3d_dev_folder/design/position_estimation/render",
+                        "principalPoint": {
+                            "x": 1232.0,
+                            "y": 1640.0
+                        },
+                        "initializationMode": "unknown",
+                        "distortionParams": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "locked": false
                     }
                 ],
                 "sensorDatabase": "C:/Users/Solaris/Documents/programme/Meshroom-2019.2.0/aliceVision/share/aliceVision/cameraSensors.db",
-                "defaultFieldOfView": 79.0,
+                "defaultFieldOfView": 62.2,
                 "groupCameraFallback": "folder",
                 "verboseLevel": "info"
             },
@@ -482,11 +96,11 @@
             ],
             "parallelization": {
                 "blockSize": 40,
-                "size": 45,
-                "split": 2
+                "size": 0,
+                "split": 0
             },
             "uids": {
-                "0": "595e87145c78d7375cfefcbfb5f96d02dad10a15"
+                "0": "23cdccdb41418561812a414890e8587778eed73b"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -511,11 +125,11 @@
             ],
             "parallelization": {
                 "blockSize": 0,
-                "size": 45,
+                "size": 0,
                 "split": 1
             },
             "uids": {
-                "0": "269c8ff7ee1c0e9a3ba118e76bf5f953ac156638"
+                "0": "11a72e0c7ad34e67a53d7e8afedadd94ab0b6b95"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -542,11 +156,11 @@
             ],
             "parallelization": {
                 "blockSize": 20,
-                "size": 45,
-                "split": 3
+                "size": 0,
+                "split": 0
             },
             "uids": {
-                "0": "43a3836f1f462f8449666ee9811fb19b51229230"
+                "0": "7b248f46c101c18d8e3c34b55b7399b60529d7d7"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -580,11 +194,11 @@
             ],
             "parallelization": {
                 "blockSize": 0,
-                "size": 45,
+                "size": 0,
                 "split": 1
             },
             "uids": {
-                "0": "3091f85b4b5e52a4be8135d9836cdff2c8e01656"
+                "0": "69867c57e089af0986b83d91fd21a81d7e76db79"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -632,11 +246,11 @@
             ],
             "parallelization": {
                 "blockSize": 40,
-                "size": 45,
-                "split": 2
+                "size": 0,
+                "split": 0
             },
             "uids": {
-                "0": "949fead9a13e4c1463ab152e21681fc95038fc75"
+                "0": "12b71b551c929d16a4939afaae8c5e4a2ed04938"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -661,11 +275,11 @@
             ],
             "parallelization": {
                 "blockSize": 3,
-                "size": 45,
-                "split": 15
+                "size": 0,
+                "split": 0
             },
             "uids": {
-                "0": "5ef078be417822abe0fe9b5c96cd40c63166a6a2"
+                "0": "4b73e9bd349ea71d711384cff1e1e2f6e3a172f6"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -703,11 +317,11 @@
             ],
             "parallelization": {
                 "blockSize": 10,
-                "size": 45,
-                "split": 5
+                "size": 0,
+                "split": 0
             },
             "uids": {
-                "0": "911c1249f281890b0a563d854650e671b03bb24b"
+                "0": "cad8e039d17b811ee56ae3b7cc2b75de171de1ca"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -739,7 +353,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "e6262089f42b7ba012f57227548dd1da5558fe1e"
+                "0": "9d3529764236da228381a280de28f5d3402700e3"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -787,7 +401,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "b58bbcf32a7dfcb15d3277b2e519b7a16c8a53af"
+                "0": "4efa3e37a0faf4c5fb448d1e8a071408cf50a3a1"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -814,7 +428,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "f01077293704d5e1ccfdb9f8bc309d60618d79ee"
+                "0": "857d338f975e15117f7cab52c79339de9bc82503"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -864,7 +478,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "c42cf5f291be4731a823ed34d9b0133e0b3b83e7"
+                "0": "ed1723f6bd95aebef5b6bb139d5b570eeece401c"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
@@ -894,7 +508,7 @@
                 "split": 1
             },
             "uids": {
-                "0": "a70f6e44075c8b6c37a834c3a64072a07321b7fc"
+                "0": "78fd7204e87c5d962de39e3822726681e7636747"
             },
             "internalFolder": "{cache}/{nodeType}/{uid0}/",
             "inputs": {
