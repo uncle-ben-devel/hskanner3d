@@ -6,7 +6,7 @@ if test -f /home/pi/updated-flag; then
     sudo shutdown now
     exit
 else
-    touch updated-flag
+    touch /home/pi/updated-flag
 fi
 
 # update firmware for better power performance
