@@ -17,7 +17,6 @@ class hska3d:
         self.pipe_file_hq = self.customs_obj.get('pipe_file_hq')
         self.pipe_file_fast = self.customs_obj.get('pipe_file_fast')
         self.timestamp = strftime("%d-%m-%Y_%H:%M:%S", localtime())
-        #self.timestamp = str(datetime.now().time())
         self.image_gen_out_dir = self.workpath + "/10_image_gen_out/" + self.timestamp
         self.image_filt_out_dir = self.workpath + "/11_image_filter_out/" + self.timestamp
         self.pipe_file_dir_hq = self.workpath + "/03_3d_gen/" + self.pipe_file_hq
@@ -70,8 +69,8 @@ class hska3d:
 
     def gen_2d(self):
         self.exec_command("clear")
-        # turn on lights
-        self.exec_command("python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"all_set.py 255 255 255 255\"")
+        # turn on lights async after the selftimer, so that they are not on full blast during waiting.
+        self.exec_async("sleep "+ selftimer + " && " + "python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"all_set.py 255 255 255 255\"")
         # take photos
         self.exec_command("python2 " + self.workpath + "/01_image_gen/cpi_capture.py " + "\"" + self.number_sensor_nodes + "\" \"" + self.image_gen_out_dir + "\" \"" + self.network_subnet + "\" \"" + self.selftimer + "\"")
         # change lights to idle mode
