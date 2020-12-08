@@ -1,3 +1,11 @@
+# Purpose
+#   This script controls the generation and filtering of 2D as well as 3D data, offering an easy to use graphical user interface. For that, it uses the class and methods defined in hskanner3d_script.py, and though it, all the other scripts.
+####
+# Usage
+#   python3.7 hskanner3d_gui.py
+# this script has no additional arguments.
+# It is recommended to run the GUI from a terminal, since all the (debug) output is displayed there.
+
 #!/usr/bin/env python
 import tkinter as tk
 from tkinter import *
@@ -47,17 +55,17 @@ class hska3d_gui:
 
         # arrays for saving config data
         self.entry_field_array = []
-        self.key_array = []
+        self.key_array = [] # array that contains variable names ('keys')
 
         # load config to get number and names of variables to open up to the gui to configure
         self.load_config_from_file()
-        for key in self.config_obj["custom"]:
+        for key in self.config_obj["custom"]:   # for every variable defined under the [custom] block in the config file, do this:
             # create text label (consisting of variable name)
             ttk.Label(tab_settings, text = key).grid(column = cc, row = rr, padx = padx_setting, pady = pady_setting, sticky = stick_labels)
             # create entry box for variable and arrange it on the grid
             entry_field = Text(tab_settings, wrap = WORD, height = 1, width = entry_width)
             entry_field.grid(column = cc+1, row = rr, padx = padx_setting, pady = pady_setting, sticky = stick_entry)
-            # write field to array
+            # append current textlabel and entry fields to their arrays
             self.entry_field_array.append(entry_field)
             self.key_array.append(key)
             # advance row by one
@@ -102,8 +110,8 @@ class hska3d_gui:
 
     def write_config_to_textboxes(self, default_or_custom):
         for nn in range(self.number_variables):
-            self.entry_field_array[nn].delete(0.0, END)
-            self.entry_field_array[nn].insert(END, self.config_obj[default_or_custom][self.key_array[nn]])
+            self.entry_field_array[nn].delete(0.0, END) # clear entry fields
+            self.entry_field_array[nn].insert(END, self.config_obj[default_or_custom][self.key_array[nn]]) # fill them with the contents of the variables
 
     def write_textboxes_to_config(self, default_or_custom):
         self.settings_output.delete(0.0, END)
@@ -112,8 +120,7 @@ class hska3d_gui:
             textbox_type = self.check_type(self.entry_field_array[nn].get(0.0, END))
             config_type = self.check_type(self.config_obj[default_or_custom][self.key_array[nn]])
             if textbox_type == config_type:
-                self.config_obj[default_or_custom][self.key_array[nn]] = self.entry_field_array[nn].get(0.0, END)
-                
+                self.config_obj[default_or_custom][self.key_array[nn]] = self.entry_field_array[nn].get(0.0, END) 
             else:
                 self.error_count += 1
                 self.entry_field_array[nn].delete(0.0, END)
@@ -142,7 +149,7 @@ class hska3d_gui:
             self.hs.apply_settings()
             self.hs = hska3d()
 
-    # functions for scanning
+    # functions for scanning. Due to how Tk buttons work, you can't pass values to your function when a button is pressed, you can only call the function like this: 'function()'.
     def init_scanning_interface(self):
         self.hs = hska3d()
         self.hs.apply_settings()

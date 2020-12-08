@@ -1,3 +1,11 @@
+# Purpose
+#   This script filters the image output from the SN. Currently, it's only rotating the images so that it can be seen better by humans - the image orientation does not matter for the photogrammetry.
+####
+# Usage
+#   ./image_filter_script.sh    <str input_directory> <str output_directory> <int rotation_degrees> 
+# Directories should be put in as absolute, so from the filesystem root '/' up.
+# Rotation in degrees. I have only tested 90, 180 and 270 - others may work, too.
+
 #!/bin/bash
 # This script filters the captured jpgs
 

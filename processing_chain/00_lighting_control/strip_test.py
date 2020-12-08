@@ -1,3 +1,10 @@
+# Purpose
+#   This script controls an RGBW-Strip with the data_in line attached to GPIO 18 on a Raspberry Pi. It is used to test the LED-Strip for defunct LEDs. To do that, it cycles each color.
+####
+# Usage
+#   python3.7 strip_test.py
+# this script has no additional arguments.
+
 #!/usr/bin/env python
 
 from time import sleep
@@ -5,7 +12,7 @@ import board
 import neopixel
 
 # LED strip configuration:
-LED_COUNT   = 13      # Number of LED pixels.
+LED_COUNT   = 120      # Number of LED pixels.
 LED_PIN     = board.D18      # GPIO pin
 LED_BRIGHTNESS = 1  # LED brightness
 LED_ORDER = neopixel.GRBW # order of LED colours. May be GRB, RGB, GRBW, or RGBW

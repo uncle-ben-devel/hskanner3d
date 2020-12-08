@@ -1,3 +1,10 @@
+# Purpose
+#   This script controls the generation and filtering of 2D as well as 3D data. For that, it calls all the other scripts required and passes them the arguments it reads from the configuration file.
+####
+# Usage
+#   python3.7 hskanner3d_script.py
+# this script has no additional arguments.
+
 #!/usr/bin/env python
 from sys import path
 from os import chdir
@@ -5,6 +12,7 @@ from time import localtime, strftime
 import configparser, subprocess, os
 
 class hska3d:
+    # constructor, gets called whenever a hska3d object is created. Is used to initialize the LED strip as well as loading all variables from the configuration file.
     def __init__(self):
         chdir("/")
         self.workpath = path[0]  # get absolute path of script
@@ -48,11 +56,13 @@ class hska3d:
         # finished loading variables. now putting led strips in idle mode.
         self.idle_led_strip()
 
+    # this function executes a command in sync, meaning whatever command you use will have to be finished for the next command to be executed.
     def exec_command(self, command):
         print("Executing \'", command, "\'.")
         process = subprocess.run(command, shell=True)
         print("_")
 
+    # this function executes a command in async, meaning the command will run in the background.
     def exec_async(self, command):
         print("Executing \'", command, "\'.")
         process = subprocess.Popen(command, shell=True)
@@ -63,14 +73,16 @@ class hska3d:
 
     def idle_led_strip(self):
         self.exec_command("python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"comet_effect.py " + self.strip_length + " " + self.comet_tail_length + " " + self.comet_brightness + " " + self.comet_r + " " + self.comet_g + " " + self.comet_b + " " + self.comet_w + " " + self.comet_sleeptime + "\"")
+
     def apply_settings(self):
         # applies settings from config to compound pi
         self.exec_command("python2 " + self.workpath + "/01_image_gen/cpi_apply_settings.py \"" + self.number_sensor_nodes + "\" \"" + self.isosetting + "\" \"" + self.shutterspeed + "\" \"" + self.whitebalance + "\" \"" + self.network_subnet + "\"")
 
+    # function for taking images and everything needed for that to go smoothly, e.g. turning the LED strip to full brigtness for illumination.
     def gen_2d(self):
         self.exec_command("clear")
         # turn on lights async after the selftimer, so that they are not on full blast during waiting.
-        self.exec_async("sleep "+ selftimer + " && " + "python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"all_set.py 255 255 255 255\"")
+        self.exec_async("sleep "+ selftimer + " && " + "python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"all_set.py 255 255 255 255 " + self.strip_length + "\"")
         # take photos
         self.exec_command("python2 " + self.workpath + "/01_image_gen/cpi_capture.py " + "\"" + self.number_sensor_nodes + "\" \"" + self.image_gen_out_dir + "\" \"" + self.network_subnet + "\" \"" + self.selftimer + "\"")
         # change lights to idle mode
@@ -96,10 +108,10 @@ class hska3d:
         self.gen_2d()
         self.filter_2d()
         self.gen_3d(hq_or_fast)
-        self.filter_3d() 
+        self.filter_3d()
 
 def main():
-    hs = hska3d() # load an object of hska3d class, which will load some of its variables from the defined config file, and calculate the rest of them.
+    hs = hska3d() # create an object of the hska3d class, which will load some of its variables from the defined config file, and calculate the rest of them.
     hs.run("fast")
 
 if __name__ == "__main__":
