@@ -1,18 +1,19 @@
-<center><img src="https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/hskanner_symbol_v1.png?raw=true" width="200"></center>
+<p align="center">
+  <img src="https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/hskanner_symbol_v1.png?raw=true" width="200">
+</p>
 
-#HSkanner3D
+# HSkanner3D
 3D scanning using a network of Raspberry Pies with camera modules and photogrammetry. This project is funded and overseen by Hochschule Karlsruhe - Technik und Wirtschaft and developed by Benedikt Reinberger. It involves the design and assembly of a complete 3D scanner. If you want to build your own, this may be a good starting point.
+## this project is still a WIP.
 
-##this project is still a WIP.
-
-##HSkanner3D system architecture
+## HSkanner3D system architecture
 ![HSkanner3D system architecture](https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/system_architecture.png?raw=true)
 
-##WIP The Scanner in the Lab in Karlsruhe WIP
+## WIP The Scanner in the Lab in Karlsruhe WIP
 
 
-#Installation Of Development Setup
-##Hardware
+# Installation Of Development Setup
+## Hardware
 To run your own instance of HSkanner3D or to set it up from scratch, first gather the required hardware.
 
 *   PC with NVidia graphics card (needed for photogrammetry software Meshroom, uses CUDA exclusively)
@@ -22,7 +23,7 @@ To run your own instance of HSkanner3D or to set it up from scratch, first gathe
 *   one or more ethernet cable(s)
 *   an ethernet switch with at least one interface for each Raspberry Pi and the PC (unmanaged is fine)
 
-##Naming Conventions
+## Naming Conventions
 First, some naming conventions.
 
 *   the PC will run computation of the 3D model, so it is the compute node (**CN**)
@@ -31,7 +32,7 @@ First, some naming conventions.
 *   the SN are attached to metal structures to keep them suspended at a calculated height and angle. The metal structures are called **tower**s.
 *   for each tower, there is one SN controlling the RGBW led strip for lighting and light effects. That one also is a lighting node (**LN**).
 
-#Expert Installation Guide
+# Expert Installation Guide
 *   install Ubuntu 18.04 on the PC.
 *   install the required software by running
 ```
@@ -81,8 +82,8 @@ First, some naming conventions.
 *   connect and power up the Raspberry Pies.
 *   start the GUI from /processing_chain using python3.7.
 
-#Beginner Installation Guide
-##Operating System Setup
+# Beginner Installation Guide
+## Operating System Setup
 The HSkanner3D software is designed around the linux family of operating systems, thus we will be installing a linux distro on our PC to turn it into the CN and AS.
 
 *   go to [the download page for Ubuntu 18.04](https://releases.ubuntu.com/18.04) and download the Ubuntu 18.04 .iso (HSkanner3D is known to work with Ubuntu 18.04 - other distros or versions may work, but 18.04 has all the majority of required software in the repositories or otherwise easily accessible). I recommend Ubuntu because it has the option to easily install and run the proprietary NVidia driver, which is needed for smooth operation. The checksum of the .iso I used is WIP WIP.
@@ -97,8 +98,7 @@ The HSkanner3D software is designed around the linux family of operating systems
 *   you will likely want to make a clean install, erasing everything on the OS disk before installing the new OS. Make sure you backed up any important files or partitions you want to keep beforehand, using a tool like [Clonezilla](https://clonezilla.org/downloads.php) for partitions and OS installs, or just copying the files to external media. I chose the minimal install, but either one should be fine. You can leave the boxes for third parties and updates unticked, we will deal with those manually.
 *   to make networking easier, I recommend getting internet into the PC by using a different network interface than the one connected to the scanning array. The easiest way to do this is to use a smartphone connected to the PC using USB tethering. To do that, on your smartphone running Android, go to Settings > Network and Internet > Hotspot and tethering and toggle the USB tethering option while the phone is connected to the internet by the means of WiFi. Note that you have to toggle it every time the PC is rebooted.
 *   if you chose Ubuntu 18.04, you will have to manually enable the proprietary NVidia drivers after the first boot. Press the Windows (Super) key on the keyboard and type "Software & Updates" to search for it. Click on the first result and navigate to the "Additional drivers" tab, then select the latest proprietary driver and install it.
-
-##Software Install on CN
+## Software Install on CN
 *   now that we have internet access on the PC, it is time to install the software.
 *   open a terminal by pressing the Windows (Super) key, then type "terminal". Click on the icon or press enter.
 *   first, we will install git, a version control system I used when I developed the software. This will be used to download all the project files to the target machine. To do that, type
@@ -138,8 +138,7 @@ The HSkanner3D software is designed around the linux family of operating systems
     ./pxe_setup_script_static.sh
 ```
 *   this script sets up a DHCP server, a PXE server, fixes some common issues, and lays the groundwork for the SN to be able to boot from the ethernet interface. The DHCP server gives IP addresses from 192.168.128.100 to 192.168.128.200 to its clients. Make sure to change that when you have more than one hundred SN.
-
-##Software install on SN (and LN)
+## Software install on SN (and LN)
 *   download [RaspiOS buster lite armhf, .zip file](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-12-04), then flash it to a micro SD card. I used the 2020-12-04 version, and that one works. To help making flashing using dd easier, you can use the 'Disks' utility in Ubuntu. First, unmount all partitions on the SD card by clicking on them and then on the sqare icon below the partitions. After that, you can format it by clicking on the three horizontal lines > Format Disk ... > Format ... > Format. You can also get the device lettering from here (/dev/sdX).
 *   once it is flashed, open the file browser and navigate to /media/your-username-here/boot and create an empty file called 'ssh' by opening a terminal there and executing
 ```
@@ -216,8 +215,7 @@ The HSkanner3D software is designed around the linux family of operating systems
     sudo shutdown now
 ```
 *   and remove the micro SD card.
-
-##Last steps for PXE booting
+## Last steps for PXE booting
 *   insert the SD card into the PC. Then, navigate to the /installation_setup/pxe_setup directory from hskanner3d and execute
 ```
     ./pxe_refresh_OS.sh
@@ -229,8 +227,7 @@ The HSkanner3D software is designed around the linux family of operating systems
     cat /var/lib/misc/dnsmasq.leases
 ```
 *   if there is no output, nothing has happened (yet). If everything goes smooth, the third field will have an IP address that was assigned to a Pi. The third field will say "raspberrypi" (the hostname of the device). The green status LED of the Pi should cycle between blinking fast twice, and pausing for about a second after it has booted with PXE. The boot may take a while (sometimes minutes), depending on the order the bootloader looks for PXE files on the network share.
-
-#Using HSkanner3D
+# Using HSkanner3D
 *   look at the config file in /processing_chain and modify the variables to suit your needs (keeping the data types).
 ```
 The [default] section provides defaults for all other sections. It is loaded by pressing the "load defaults" option in the GUI.
