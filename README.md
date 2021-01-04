@@ -1,14 +1,14 @@
-# HSkanner3D
-    ![HSkanner3D icon](https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/hskanner_symbol_v1.png?raw=true)
-3D scanning using a network of Raspberry Pies with camera modules and photogrammetry. This project is funded and overseen by Hochschule Karlsruhe - Technik und Wirtschaft and developed by Benedikt Reinberger. It involves the design and assembly of a complete 3D scanner. If you want to build your own, this may be a good starting point.
+![HSkanner3D icon](https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/hskanner_symbol_v1.png?raw=true)
 
-# this project is still a WIP.
-WIP
-    logo image here
-    finished scanner image here
-    image of system architecture here
-    ![HSkanner3D system architecture](https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/system_architecture.png?raw=true)
-WIP
+# HSkanner3D
+3D scanning using a network of Raspberry Pies with camera modules and photogrammetry. This project is funded and overseen by Hochschule Karlsruhe - Technik und Wirtschaft and developed by Benedikt Reinberger. It involves the design and assembly of a complete 3D scanner. If you want to build your own, this may be a good starting point.
+## this project is still a WIP.
+
+## HSkanner3D system architecture
+![HSkanner3D system architecture](https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/system_architecture.png?raw=true)
+
+###WIP finished scanner image here WIP
+
 
 # Installation Of Development Setup
 ## Hardware
