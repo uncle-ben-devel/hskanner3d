@@ -1,11 +1,13 @@
 # HSkanner3D
+    ![HSkanner3D icon](https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/hskanner_symbol_v1.png?raw=true)
 3D scanning using a network of Raspberry Pies with camera modules and photogrammetry. This project is funded and overseen by Hochschule Karlsruhe - Technik und Wirtschaft and developed by Benedikt Reinberger. It involves the design and assembly of a complete 3D scanner. If you want to build your own, this may be a good starting point.
 
-# this project is still a WIP, and documentation will follow once finished.
+# this project is still a WIP.
 WIP
     logo image here
     finished scanner image here
     image of system architecture here
+    ![HSkanner3D system architecture](https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/system_architecture.png?raw=true)
 WIP
 
 # Installation Of Development Setup
@@ -27,9 +29,58 @@ First, some naming conventions.
 *   the Raspberry Pies will be connected to the camera sensors and are used to interface the cameras to the network, so they are sensor nodes (**SN**)
 *   the SN are attached to metal structures to keep them suspended at a calculated height and angle. The metal structures are called **tower**s.
 *   for each tower, there is one SN controlling the RGBW led strip for lighting and light effects. That one also is a lighting node (**LN**).
-## TL;DR Guide
-WIP
 
+# Expert Installation Guide
+*   install Ubuntu 18.04 on the PC.
+*   install the required software by running
+```
+    sudo add-apt-repository -y ppa:waveform/ppa && sudo apt-get update && sudo apt-get install -y git meshlab python3-tk ntp python-pip python3-pip python3.7 compoundpi-client && pip install setuptools
+```
+*   set up the NTP server by running
+```
+    echo "broadcast 192.168.128.255" | sudo tee -a /etc/ntp.conf
+```
+*   from this repo, execute
+```
+    /installation_setup/pxe_setup/pxe_setup_script_static.sh
+```
+*   download RaspiOS buster lite armhf 2020-12-04, then flash it to a micro SD card.
+*   copy bootloader-flash-utils and cpi_setup from  the /installation_setup directory of hskanner3d to /home/pi on the rootfs.
+*   then, copy over the 00_lighting_control directory from the /processing_chain of hskanner3d.
+*   on the Raspberry Pi, execute
+```
+    /bootloader-flash-utils/flash_bootloader.sh
+```
+*   to flash the bootloader to one that can boot PXE. This script is made for automation. Add a cron job @reboot if you want to flash multiple Raspberry Pies headless.
+*   make sure you have internet access on the Pi, then execute
+```
+    /cpi_setup/cpi_server_SN_setup.sh
+```
+*   then install the software required for the lighting to work using
+```
+    sudo apt-get install -y python3-pip python3.7
+    sudo pip3 install adafruit-circuitpython-neopixel
+```
+*   to enable the lighting control at boot, run
+```
+    crontab -e
+```
+*   and add
+```
+    @reboot sudo python3.7 /home/pi/00_lighting_control/lighting_receiver.py
+```
+*   or equivalent, then save and exit.
+*   enable the camera interface on the Pi.
+*   mount the micro SD card on the PC and execute
+```
+    /installation_setup/pxe_setup/pxe_refresh_OS.sh
+```
+*   look at the config file in /processing_chain and modify the variables to suit your needs (keeping the data types).
+*   reboot the PC
+*   connect and power up the Raspberry Pies.
+*   start the GUI from /processing_chain using python3.7.
+
+# Beginner Installation Guide
 ## Operating System Setup
 The HSkanner3D software is designed around the linux family of operating systems, thus we will be installing a linux distro on our PC to turn it into the CN and AS.
 
@@ -82,11 +133,11 @@ The HSkanner3D software is designed around the linux family of operating systems
 *   this will broadcast the time on the subnet 192.168.128.0/24.
 *   make sure the PC has internet connection. Then, to enable PXE (booting the SNs over network) on the PC (AS) side, go to /installation_setup/pxe_setup. Afterwards, rightclick in the directory and select 'open in terminal' and execute
 ```
-./pxe_setup_script_static.sh
+    ./pxe_setup_script_static.sh
 ```
 *   this script sets up a DHCP server, a PXE server, fixes some common issues, and lays the groundwork for the SN to be able to boot from the ethernet interface. The DHCP server gives IP addresses from 192.168.128.100 to 192.168.128.200 to its clients. Make sure to change that when you have more than one hundred SN.
 ## Software install on SN (and LN)
-*   download [RaspiOS buster lite armhf](downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-12-04), then flash it to a micro SD card. I used the 2020-12-04 version, and that one works. To help making flashing using dd easier, you can use the 'Disks' utility in Ubuntu. First, unmount all partitions on the SD card by clicking on them and then on the sqare icon below the partitions. After that, you can format it by clicking on the three horizontal lines > Format Disk ... > Format ... > Format. You can also get the device lettering from here (/dev/sdX).
+*   download [RaspiOS buster lite armhf, .zip file](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-12-04), then flash it to a micro SD card. I used the 2020-12-04 version, and that one works. To help making flashing using dd easier, you can use the 'Disks' utility in Ubuntu. First, unmount all partitions on the SD card by clicking on them and then on the sqare icon below the partitions. After that, you can format it by clicking on the three horizontal lines > Format Disk ... > Format ... > Format. You can also get the device lettering from here (/dev/sdX).
 *   once it is flashed, open the file browser and navigate to /media/your-username-here/boot and create an empty file called 'ssh' by opening a terminal there and executing
 ```
     sudo touch ssh
@@ -131,7 +182,7 @@ The HSkanner3D software is designed around the linux family of operating systems
 ```
 *   make sure you have internet access, then change directory (cd) to ~/cpi_setup, then execute
 ```
-    ./cpi_client_SN
+    ./cpi_server_SN_setup.sh
 ```
 *   then install the software required for the lighting to work using
 ```
@@ -140,11 +191,11 @@ The HSkanner3D software is designed around the linux family of operating systems
 ```
 *   to enable the lighting control at boot, run
 ```
-crontab -e
+    crontab -e
 ```
 *   and add
 ```
-@reboot sudo python3.7 /home/pi/00_lighting_control/lighting_receiver.py
+    @reboot sudo python3.7 /home/pi/00_lighting_control/lighting_receiver.py
 ```
 *   or equivalent, then save and exit.
 *   next, we will remove the static IP we set for easy SSH. Execute
@@ -174,9 +225,30 @@ crontab -e
     cat /var/lib/misc/dnsmasq.leases
 ```
 *   if there is no output, nothing has happened (yet). If everything goes smooth, the third field will have an IP address that was assigned to a Pi. The third field will say "raspberrypi" (the hostname of the device). The green status LED of the Pi should cycle between blinking fast twice, and pausing for about a second after it has booted with PXE. The boot may take a while (sometimes minutes), depending on the order the bootloader looks for PXE files on the network share.
-## Done!
+# Using HSkanner3D
 *   look at the config file in /processing_chain and modify the variables to suit your needs (keeping the data types).
-*   now you can execute the GUI in a terminal.
+```
+The [default] section provides defaults for all other sections. It is loaded by pressing the "load defaults" option in the GUI.
+The [custom] section is loaded on GUI startup and is used as persistant storage for the user settings.
+    meshroomroot        is the complete path from filesystem root to the root of meshroom (the first folder that contains files other than a single folder)
+    pipe_file_hq        is the name of the meshroom pipeline file that will be used when the "high quality" option for computation is chosen in the GUI.
+    pipe_file_fast      same as pipe_file_hq, but for the "fast" option.
+    number_sensor_nodes the number of Raspberry Pies attached to the scanning array. This is used by compoundpi to stop scanning for more servers when the defined number of SN has been found. If the number of SN in the array is lower than this variable, compound pi will throw an assertion error.
+    network_subnet      is the local network we use for the scanning array, in CIDR-notation. It's recommended you don't change this, since this is not the only place you would need to change IP addresses to use a different network for the scanner. Read the setup if you want to look where IP addresses and ranges are set for this application.
+    shutterspeed        is the shutterspeed of the Raspberry Pi camera module to be used. It is set in milliseconds and invalid values will result in the camera module using its default value. Since we want to scan humans, 1/50s...1/60s is a decent shutter speed.
+    isosetting          is the ISO value of the camera module. Invalid values will result in the camera module using the highest or lowest possible setting (depending on whether you over- or undershot it), but writing the set ISO to the image metadata.
+    whitebalance        is the whitebalance setting of the camera module. auto works well. If set values like tungsten are set, different camera modules will still have different color temperature in the end, with auto this problem is less visible.
+    selftimer           is additional wait time in seconds before the shot is taken. It takes more time from pressing an action button (take images, 3d scan, ...) to the actual capture because of program overhead and general slowness of compoundpi. If selftimer is 0.0, the captures are not synchronized (on purpose) - the cameras will fire as soon as possible. That is usually good enough for a 3D scan of a human. One disadvantage of synced capture is that the clock of SN and AS need to be in sync, and there is no apparent way to easily check for that. Since the capture timing is set from the AS, it sets a timestamp at current time + selftimer time. If the SN are one hour behind, it will take one hour until a capture will happen. Thus, I recommend using a selftimer of 0.0 until the scanner has been running for a while (NTP can sync in a minute or take an hour to sync - it's very sporadic). After that, you can sync the captures.
+    rotation            rotation of the captured images in increments of 90 (degree). It's not required to rotate the images for Meshroom, it does not care. However, it is nicer to look at for humans.
+    openfilebrowser     can be either 1 or 0 (enabled and disabled). If it's enabled, a file browser will open after image capture and the user can open the images to observe the captured material.
+    view_mesh           can be either 1 or 0 (enabled and disabled). If it's enabled, Meshlab will open the generated 3D data for visualization after generation.
+    strip_length        is the number of LEDs contained in a LED strip of a single tower.
+    comet_tail_length   is length of in number of LEDs the comet effect (scanner idle decorative lighting) will have, minus one (the leading LED, the "comet").
+    comet_brightness    is the brighness of the comet effect LEDs and can be from 0.0 to 1.0
+    comet_r/g/b/w       are the color values of the comet, integers from 0 to 255.
+    comet_sleeptime     is waiting time in seconds in between instances of the animation loop and thus defines how fast the effect will run through the strip.
+```
+*   now you can execute the GUI in a terminal. The buttons and tabs should be self-explanatory.
 ```
     python3.7 $HOME/hskanner3d/processing_chain/hskanner3d_gui.py
 ```

@@ -10,4 +10,4 @@ __pycache__
 *.obj
 *.ply
 *.abc
-
+!/README_resources/*
