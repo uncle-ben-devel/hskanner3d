@@ -3,7 +3,7 @@
 </p>
 
 # HSkanner3D
-3D scanning using a network of Raspberry Pies with camera modules and photogrammetry. This project is funded and overseen by Hochschule Karlsruhe - Technik und Wirtschaft and developed by Benedikt Reinberger. It involves the design and assembly of a complete 3D scanner. If you want to build your own, this may be a good starting point.
+3D scanning using a network of Raspberry Pies with camera modules and photogrammetry. This project is funded and overseen by Hochschule Karlsruhe - Technik und Wirtschaft and developed by Benedikt Reinberger. It involves the design and assembly of a complete 3D scanner (hardware and software). If you want to build your own, this may be a good starting point.
 ## this project is still a WIP.
 
 ## HSkanner3D system architecture
@@ -12,7 +12,7 @@
 ## WIP The Scanner in the Lab in Karlsruhe WIP
 
 
-# Installation Of Development Setup
+# Setup
 ## Hardware
 To run your own instance of HSkanner3D or to set it up from scratch, first gather the required hardware.
 
