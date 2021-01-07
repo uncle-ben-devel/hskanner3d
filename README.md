@@ -90,8 +90,8 @@ The HSkanner3D software is designed around the linux family of operating systems
 *   on Windows, download [Rufus](https://rufus.ie/downloads/) or a similar tool and use it to flash the .iso to a USB medium from which we'll boot and install the OS.
 *   on Linux, you can use dd to flash the .iso to an external installation medium using
 ```
-    sudo dd if=/path/to/iso/name_of_iso.iso  of=/dev/sdx status=progress conv=sync
-    #    /dev/sdx should be subsituted for the drive you want to flash the .iso to. Note that all partitions from that drive have to be unmounted first for dd to work.
+    sudo dd if=/path/to/iso/name_of_iso.iso  of=/dev/sdx status=progress bs=4096 conv=fsync
+    #    /dev/sdx should be substituted for the drive you want to flash the .iso to. Note that all partitions from that drive have to be unmounted first for dd to work.
 ```
 *   insert the newly created usb installation medium into the PC and boot from it (you can look up the function key for the boot menu of your motherboard in the manual, or go into the BIOS and use boot override if available).
 *   follow the instructions of the installation.
