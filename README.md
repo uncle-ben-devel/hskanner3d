@@ -86,7 +86,7 @@ First, some naming conventions.
 ## Operating System Setup
 The HSkanner3D software is designed around the linux family of operating systems, thus we will be installing a linux distro on our PC to turn it into the CN and AS.
 
-*   go to [the download page for Ubuntu 18.04](https://releases.ubuntu.com/18.04) and download the Ubuntu 18.04 .iso (HSkanner3D is known to work with Ubuntu 18.04 - other distros or versions may work, but 18.04 has all the majority of required software in the repositories or otherwise easily accessible). I recommend Ubuntu because it has the option to easily install and run the proprietary NVidia driver, which is needed for smooth operation. The checksum of the .iso I used is WIP WIP.
+*   go to [the download page for Ubuntu 18.04](https://releases.ubuntu.com/18.04) and download the Ubuntu 18.04 .iso (HSkanner3D is known to work with Ubuntu 18.04 - other distros or versions may work, but 18.04 has all the majority of required software in the repositories or otherwise easily accessible). I recommend Ubuntu because it has the option to easily install and run the proprietary NVidia driver, which is needed for smooth operation.
 *   on Windows, download [Rufus](https://rufus.ie/downloads/) or a similar tool and use it to flash the .iso to a USB medium from which we'll boot and install the OS.
 *   on Linux, you can use dd to flash the .iso to an external installation medium using
 ```
@@ -126,7 +126,7 @@ The HSkanner3D software is designed around the linux family of operating systems
 *   enter the password if prompted.
 *   we need additional software that is not provided within the Ubuntu packages. Namely, [Meshroom (Version 2019 2.0 is known to work)](https://www.fosshub.com/Meshroom-old.html). Download it using the provided link, then move the folder named 'Meshroom-2019.2.0-linux' to /home/your-username-here/Documents/software. If the directory does not exist yet, create it. Alternatively, you can move it wherever you like and change the meshroomroot variable in the hskanner3d.config file. If you choose to use a version of Meshroom that is different from 2019.2.0-linux, make sure to correct this path in the config file as well.
 *   to add the Raspberry Pi camera module to the camera database, replace the cameraSensors.db that comes with Meshroom (/aliceVision/share/aliceVision) with the one from /installation_setup.
-*   if you want to be able to open the design files (CAD and simulation), you will need [Freecad WIP.WIP]() and [Blender WIP]() with the MDLab plugin and the demo assets.
+*   if you want to be able to open the design files (CAD and simulation), you will need [Freecad 0.19](https://github.com/FreeCAD/FreeCAD/releases/tag/0.19_pre) with the Assembly4 and SheetMetal workbenches (Freecad 0.18 will NOT work since it can not open multiple project files at once) and [Blender 2.90.0](https://github.com/blender/blender/releases/tag/v2.90.0) with the MDLab plugin and the [demo assets](https://github.com/animate1978/MB-Lab-DemoAssets).
 *   to set up the array network, search for 'Network' and click on the one under the 'Settings' category. First, click on the gear by PCI Ethernet to get into the settings of the on-board ethernet. Under the 'IPv4' tab, select 'Manual' for IPv4 Method and enter 192.168.128.2 as Address, and 255.255.255.0 as Netmask. Leave the Gateway empty. Disable IPv6 in its tab by selecting the 'Disable' option for 'IPv6 Method'. Toggle the interface on and off to apply the new settings.
 *   set up the NTP server by running
 ```
