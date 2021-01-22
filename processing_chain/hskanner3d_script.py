@@ -82,7 +82,7 @@ class hska3d:
     def gen_2d(self):
         self.exec_command("clear")
         # turn on lights async after the selftimer, so that they are not on full blast during waiting.
-        self.exec_async("sleep "+ selftimer + " && " + "python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"all_set.py 255 255 255 255 " + self.strip_length + "\"")
+        self.exec_async("sleep "+ self.selftimer + " && " + "python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"all_set.py 255 255 255 255 " + self.strip_length + "\"")
         # take photos
         self.exec_command("python2 " + self.workpath + "/01_image_gen/cpi_capture.py " + "\"" + self.number_sensor_nodes + "\" \"" + self.image_gen_out_dir + "\" \"" + self.network_subnet + "\" \"" + self.selftimer + "\"")
         # change lights to idle mode
