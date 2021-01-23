@@ -46,7 +46,7 @@ First, some naming conventions.
 ```
     /installation_setup/pxe_setup/pxe_setup_script_static.sh
 ```
-*   download RaspiOS buster lite armhf 2020-12-04, then flash it to a micro SD card.
+*   download RaspiOS buster lite armhf 2020-02-13 (2020-12-04 will work, too), then flash it to a micro SD card.
 *   copy bootloader-flash-utils and cpi_setup from  the /installation_setup directory of hskanner3d to /home/pi on the rootfs.
 *   then, copy over the 00_lighting_control directory from the /processing_chain of hskanner3d.
 *   on the Raspberry Pi, execute
@@ -139,7 +139,7 @@ The HSkanner3D software is designed around the linux family of operating systems
 ```
 *   this script sets up a DHCP server, a PXE server, fixes some common issues, and lays the groundwork for the SN to be able to boot from the ethernet interface. The DHCP server gives IP addresses from 192.168.128.100 to 192.168.128.200 to its clients. Make sure to change that when you have more than one hundred SN.
 ## Software install on SN (and LN)
-*   download [RaspiOS buster lite armhf, .zip file](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-12-04), then flash it to a micro SD card. I used the 2020-12-04 version, and that one works. To help making flashing using dd easier, you can use the 'Disks' utility in Ubuntu. First, unmount all partitions on the SD card by clicking on them and then on the sqare icon below the partitions. After that, you can format it by clicking on the three horizontal lines > Format Disk ... > Format ... > Format. You can also get the device lettering from here (/dev/sdX).
+*   download [RaspiOS buster lite armhf, .zip file](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-12-04), then flash it to a micro SD card. I tested the 2020-12-04 as well as the 2020-02-13 version, and both work. To help making flashing using dd easier, you can use the 'Disks' utility in Ubuntu. First, unmount all partitions on the SD card by clicking on them and then on the sqare icon below the partitions. After that, you can format it by clicking on the three horizontal lines > Format Disk ... > Format ... > Format. You can also get the device lettering from here (/dev/sdX).
 *   once it is flashed, open the file browser and navigate to /media/your-username-here/boot and create an empty file called 'ssh' by opening a terminal there and executing
 ```
     sudo touch ssh
