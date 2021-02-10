@@ -27,4 +27,5 @@
 		cd "$outputdir" || exit 1 # exit if cd fails
 		# source for this line: https://askubuntu.com/questions/591733/rotate-images-from-terminal#593517
 		for file in *.jpg; do convert "$file" -rotate "$rotation" "$file"; done
+        #resize option
 	fi
