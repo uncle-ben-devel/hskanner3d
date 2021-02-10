@@ -12,11 +12,17 @@ then
 			timestamp=$(date "+%d-%h-%Y-%T")
 			backupdir="$HOME/pxe_backup/$timestamp"
 			mkdir -p "$backupdir"/nfs
-			mkdir -p "$backupdir"/tftpboot
+			#mkdir -p "$backupdir"/tftpboot
 			echo "Moving old PXE file system from internal storage to the backup directory."
-			sudo mv "$HOME"/nfs "$backupdir/"
+			sudo cp -rp "$HOME"/nfs "$backupdir/"
 			sudo umount "$HOME"/tftpboot
-			sudo mv "$HOME"/tftpboot "$backupdir"/tftpboot
+			#sudo cp "$HOME"/tftpboot "$backupdir/"
+
+            sudo rm -R "$HOME"/nfs
+            sudo rm -R "$HOME"/tftpboot
+
+            mkdir -p "$HOME"/nfs
+            mkdir -p "$HOME"/tftpboot
 
 		# copying files over to local storage
 			cd || exit 1 # if cd fails
@@ -27,6 +33,8 @@ then
 			echo
 			echo "The system will likely not connect to the internet while ethernet is connected. To fix that, delete the default route (and add the correct one, if needed). Links for this issue below:"
 			echo "https://raspberrypi.stackexchange.com/questions/15119/force-raspberry-to-get-internet-from-specific-network#15135"
+            echo
+            echo "Copying files from SD card to PC. Please wait..."
 			
 			sudo cp -a /media/"$USER"/rootfs/* "$HOME"/nfs/raspi_v0
 			sudo cp -a /media/"$USER"/boot/* "$HOME"/nfs/raspi_v0/boot/
