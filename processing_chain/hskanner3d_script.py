@@ -41,6 +41,7 @@ class hska3d:
         self.selftimer = self.customs_obj.get('selftimer')
 
         self.rotation = self.customs_obj.get('rotation')
+        self.scaling = self.customs_obj.get('scaling')
         self.openfilebrowser = self.customs_obj.get('openfilebrowser')
         self.view_mesh = self.customs_obj.get('view_mesh')
 
@@ -99,7 +100,7 @@ class hska3d:
 
     def filter_2d(self):
         # filter images
-        self.exec_command(self.workpath + "/02_image_filter/./image_filter_script.sh \"" + self.image_gen_out_dir + "\" \"" + self.image_filt_out_dir + "\" \"" + self.rotation + "\"")
+        self.exec_command(self.workpath + "/02_image_filter/./image_filter_script.sh \"" + self.image_gen_out_dir + "\" \"" + self.image_filt_out_dir + "\" \"" + self.rotation + "\" \"" + self.scaling + "\"")
       
     def gen_3d(self, hq_or_fast):
         if hq_or_fast == "hq":
