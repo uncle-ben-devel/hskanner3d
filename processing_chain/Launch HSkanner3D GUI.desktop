@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=HSkanner3D-GUI
+Comment=Launcher for the HSkanner3D GUI
+Exec=python3.7 hskanner3d_gui.py
+Icon=/home/hskanner3d-dev/Documents/devel_folder/README_resources/hskanner_symbol_v1.png
+Path=/home/hskanner3d-dev/Documents/devel_folder/processing_chain/
+Terminal=true
+StartupNotify=false
+Name[en_US]=Launch HSkanner3D GUI
