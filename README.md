@@ -41,6 +41,16 @@ First, some naming conventions.
 *   set up the NTP server by running
 ```
     echo "broadcast 192.168.128.255" | sudo tee -a /etc/ntp.conf
+    echo "server 127.127.1.0" | sudo tee -a /etc/ntp.conf
+    echo "fudge 127.127.1.0 stratum 10" | sudo tee -a /etc/ntp.conf
+```
+*   then, edit /etc/ntp.conf to remove the "limited" option from the lines
+```
+    restrict -4 default kod notrap nomodify nopeer noquery limited
+    restrict -6 default kod notrap nomodify nopeer noquery limited
+    ->
+    restrict -4 default kod notrap nomodify nopeer noquery
+    restrict -6 default kod notrap nomodify nopeer noquery
 ```
 *   from this repo, execute
 ```
@@ -60,8 +70,8 @@ First, some naming conventions.
 ```
 *   then install the software required for the lighting to work using
 ```
-    sudo apt-get install -y python3-pip python3.7
-    sudo pip3 install adafruit-circuitpython-neopixel
+    sudo apt-get install -y python3-pip python3.7 python3-rpi.gpio
+    sudo pip3 install adafruit-circuitpython-neopixel rpi_ws281x
 ```
 *   to enable the lighting control at boot, run
 ```
@@ -131,8 +141,19 @@ The HSkanner3D software is designed around the linux family of operating systems
 *   set up the NTP server by running
 ```
     echo "broadcast 192.168.128.255" | sudo tee -a /etc/ntp.conf
+    echo "server 127.127.1.0" | sudo tee -a /etc/ntp.conf
+    echo "fudge 127.127.1.0 stratum 10" | sudo tee -a /etc/ntp.conf
 ```
-*   this will broadcast the time on the subnet 192.168.128.0/24.
+*   this will broadcast the time on the subnet 192.168.128.0/24. Additionally, if time can not be obtained from the internet, it will use the internal clock instead.
+*   then, edit /etc/ntp.conf to remove the "limited" option from the lines
+```
+    restrict -4 default kod notrap nomodify nopeer noquery limited
+    restrict -6 default kod notrap nomodify nopeer noquery limited
+    ->
+    restrict -4 default kod notrap nomodify nopeer noquery
+    restrict -6 default kod notrap nomodify nopeer noquery
+```
+*   this will ensure that time will be synchronized even if there are more than three clients.
 *   make sure the PC has internet connection. Then, to enable PXE (booting the SNs over network) on the PC (AS) side, go to /installation_setup/pxe_setup. Afterwards, rightclick in the directory and select 'open in terminal' and execute
 ```
     ./pxe_setup_script_static.sh
@@ -188,8 +209,8 @@ The HSkanner3D software is designed around the linux family of operating systems
 ```
 *   then install the software required for the lighting to work using
 ```
-    sudo apt-get install -y python3-pip python3.7
-    sudo pip3 install adafruit-circuitpython-neopixel
+    sudo apt-get install -y python3-pip python3.7 python3-rpi.gpio
+    sudo pip3 install adafruit-circuitpython-neopixel rpi_ws281x
 ```
 *   to enable the lighting control at boot, run
 ```
