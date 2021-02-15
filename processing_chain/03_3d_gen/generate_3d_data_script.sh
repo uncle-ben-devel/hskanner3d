@@ -11,7 +11,7 @@
 
 	rm -R /tmp/MeshroomCache	# delete old data in the cache
 
-    meshroomroot="$1"	
+    meshroomroot="$1"
 	pipe_path="$2"
 	inputdir="$3"
 	outputdir="$4"

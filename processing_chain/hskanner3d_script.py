@@ -104,7 +104,7 @@ class hska3d:
 
     def filter_2d(self):
         # filter images
-        self.exec_command(self.workpath + "/02_image_filter/./image_filter_script.sh \"" + self.image_gen_out_dir + "\" \"" + self.image_filt_out_dir + "\" \"" + self.rotation + "\" \"" + self.scaling + "\"")
+        self.exec_command(self.workpath + "/02_image_filter/./image_filter_script.sh \"" + self.image_gen_out_dir + "\" \"" + self.image_filt_out_dir + "\" " + self.rotation + " " + self.scaling)
       
     def gen_3d(self, hq_or_fast):
         if hq_or_fast == "hq":
