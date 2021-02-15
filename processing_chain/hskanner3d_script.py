@@ -99,7 +99,7 @@ class hska3d:
         # change lights back to idle mode
         self.idle_led_strip()
         # open file browser if needed
-        if self.openfilebrowser == '1':
+        if self.openfilebrowser:
             self.exec_async("nautilus -w \"" + self.image_gen_out_dir + "\" > /dev/null 2>&1 &")  
 
     def filter_2d(self):
@@ -108,9 +108,9 @@ class hska3d:
       
     def gen_3d(self, hq_or_fast):
         if hq_or_fast == "hq":
-            self.exec_command(self.workpath + "/03_3d_gen/./generate_3d_data_script.sh \"" + self.meshroomroot + "\" \"" + self.pipe_file_dir_hq + "\" \"" + self.image_filt_out_dir + "\" \"" + self.three_d_gen_out_dir + "\" \"" + self.view_mesh + "\"" )
+            self.exec_command(self.workpath + "/03_3d_gen/./generate_3d_data_script.sh \"" + self.meshroomroot + "\" \"" + self.pipe_file_dir_hq + "\" \"" + self.image_filt_out_dir + "\" \"" + self.three_d_gen_out_dir + "\" " + self.view_mesh)
         else:
-            self.exec_command(self.workpath + "/03_3d_gen/./generate_3d_data_script.sh \"" + self.meshroomroot + "\" \"" + self.pipe_file_dir_fast + "\" \"" + self.image_filt_out_dir + "\" \"" + self.three_d_gen_out_dir + "\" \"" + self.view_mesh + "\"" )
+            self.exec_command(self.workpath + "/03_3d_gen/./generate_3d_data_script.sh \"" + self.meshroomroot + "\" \"" + self.pipe_file_dir_fast + "\" \"" + self.image_filt_out_dir + "\" \"" + self.three_d_gen_out_dir + "\" \"" + self.view_mesh + "\"")
 
     def filter_3d(self):
         pass # doesn't do anything yet.

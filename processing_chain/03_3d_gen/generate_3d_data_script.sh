@@ -31,15 +31,15 @@
 		exit 1
 	fi
 
-	if (( view_mesh ))
+	if (( $view_mesh ))
 	then
-		if test -f "$outputdir/sfm.ply" # if point cloud was generated, open it
+		if test -f "$outputdir"/*.ply # if point cloud was generated, open it
 		then
-			nohup meshlab "$outputdir"/sfm.ply > /dev/null 2>&1 &
+			nohup meshlab "$outputdir"/*.ply > /dev/null 2>&1 &
 		fi
 
-		if test -f "$outputdir/texturedMesh.obj"    # if mesh was generated, open it
+		if test -f "$outputdir"/*.obj    # if mesh was generated, open it
 		then
-			nohup meshlab "$outputdir"/texturedMesh.obj > /dev/null 2>&1 &
+			nohup meshlab "$outputdir"/*.obj > /dev/null 2>&1 &
 		fi
 	fi
