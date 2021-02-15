@@ -75,14 +75,11 @@ class hska3d:
     def idle_led_strip(self):
         self.exec_command("python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"comet_effect.py " + self.strip_length + " " + self.comet_tail_length + " " + self.comet_brightness + " " + self.comet_r + " " + self.comet_g + " " + self.comet_b + " " + self.comet_w + " " + self.comet_sleeptime + "\"")
 
-    def cycle_lights(self):
+    def turn_on_lights(self):
         # turns lights on, waits, then turns them off. For taking photos mainly.
         # turn on lights async after the selftimer, so that they are not on full blast during waiting.
-        self.exec_async("sleep "+ self.selftimer + " && " + "python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"all_set.py 255 255 255 255 " + self.strip_length + "\"")
-        sleep(0.5)
-        # change lights back to idle mode
-        self.idle_led_strip()
-                
+        self.exec_command("sleep "+ self.selftimer + " && " + "python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"all_set.py 255 255 255 255 " + self.strip_length + "\"")
+
     def apply_settings(self):
         # applies settings from config to compound pi
         self.exec_command("python2 " + self.workpath + "/01_image_gen/cpi_apply_settings.py \"" + self.number_sensor_nodes + "\" \"" + self.isosetting + "\" \"" + self.shutterspeed + "\" \"" + self.whitebalance + "\" \"" + self.network_subnet + "\"")
@@ -90,10 +87,12 @@ class hska3d:
     # function for taking images and everything needed for that to go smoothly, e.g. turning the LED strip to full brigtness for illumination.
     def gen_2d(self):
         self.exec_command("clear")
-        # turn the lighting on and off async for the shots. Ideally, you would turn them on synced right before the capture, then idle them right after. However, since CPi is slow, the lighting always goes first, even if executed async.
-        self.cycle_lights()
+        # turn the lighting on
+        self.turn_on_lights()
         # take photos
         self.exec_command("python2 " + self.workpath + "/01_image_gen/cpi_capture.py " + "\"" + self.number_sensor_nodes + "\" \"" + self.image_gen_out_dir + "\" \"" + self.network_subnet + "\" \"" + self.selftimer + "\"")
+        # change lights back to idle mode
+        self.idle_led_strip()
         # open file browser if needed
         if self.openfilebrowser == '1':
             self.exec_async("nautilus -w \"" + self.image_gen_out_dir + "\" > /dev/null 2>&1 &")  

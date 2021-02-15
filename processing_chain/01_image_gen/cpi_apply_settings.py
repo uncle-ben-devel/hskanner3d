@@ -26,7 +26,9 @@ def main(argv):
     with CompoundPiClient() as client:
         client.servers.network = netw_addr
         client.servers.find(number_sensor_nodes)
-        assert len(client.servers) == number_sensor_nodes
+        if len(client.servers) <= number_sensor_nodes:
+            print('\n\n\n\nNot all clients have been found! You can either wait or reboot both systems.\n\n\n\n')
+        assert len(client.servers) >= number_sensor_nodes
         print('Configuring servers.')
         client.resolution(3280,2464)	# max res for camera module v2. see https://www.raspberrypi.org/documentation/hardware/camera/
         #client.resolution(2592,1944)	# max res for camera module v1.

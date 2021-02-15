@@ -12,11 +12,9 @@ then
 			timestamp=$(date "+%d-%h-%Y-%T")
 			backupdir="$HOME/pxe_backup/$timestamp"
 			mkdir -p "$backupdir"/nfs
-			#mkdir -p "$backupdir"/tftpboot
 			echo "Moving old PXE file system from internal storage to the backup directory."
-			sudo cp -rp "$HOME"/nfs "$backupdir/"
+			sudo cp -rp "$HOME"/nfs "$backupdir/"       # copy while keeping file permissions/ownership and flags intact
 			sudo umount "$HOME"/tftpboot
-			#sudo cp "$HOME"/tftpboot "$backupdir/"
 
             sudo rm -R "$HOME"/nfs
             sudo rm -R "$HOME"/tftpboot

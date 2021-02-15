@@ -28,7 +28,10 @@ def main(argv):
     with CompoundPiClient() as client:
         client.servers.network = netw_addr
         client.servers.find(number_sensor_nodes)
-        assert len(client.servers) == number_sensor_nodes
+        if len(client.servers) <= number_sensor_nodes:
+            print('\n\n\n\nNot all clients have been found! You can either wait or reboot both systems.\n\n\n\n')
+        assert len(client.servers) >= number_sensor_nodes
+
 # changing directory so that the output will be written to the correct directory	    
         makedirs(output_dir)
         chdir(output_dir)
