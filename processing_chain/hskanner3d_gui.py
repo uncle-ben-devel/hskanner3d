@@ -52,6 +52,8 @@ class hska3d_gui:
         tabControl.pack(expand = 1, fill ="both") 
         cc = 0 # column counter
         rr = 0 # row counter
+        line_break = 16 # at this many items, the rows will be reset and the columns advanced.
+        self.number_variables = 0
 
         # arrays for saving config data
         self.entry_field_array = []
@@ -68,9 +70,11 @@ class hska3d_gui:
             # append current textlabel and entry fields to their arrays
             self.entry_field_array.append(entry_field)
             self.key_array.append(key)
-            # advance row by one
-            rr += 1
-        self.number_variables = rr
+            # advance row by one, since rows are equal to number of variables as well.
+            self.number_variables += 1
+            # if there are too many rows, the window will not fit into the screen. So we reset the rows and advance the column by two, since every item consists of a variable name and an entry field.
+            rr = self.number_variables % line_break
+            cc =  int(self.number_variables / line_break) * 2
         
         # fill input fields with last custom config from file
         self.load_custom()
