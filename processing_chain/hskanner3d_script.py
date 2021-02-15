@@ -54,6 +54,11 @@ class hska3d:
         self.comet_w = self.customs_obj.get('comet_w')
         self.comet_sleeptime = self.customs_obj.get('comet_sleeptime')
 
+        self.photo_light_r = self.customs_obj.get('photo_light_r')
+        self.photo_light_g = self.customs_obj.get('photo_light_g')
+        self.photo_light_b = self.customs_obj.get('photo_light_b')
+        self.photo_light_w = self.customs_obj.get('photo_light_w')
+
         # finished loading variables. now putting led strips in idle mode.
         self.idle_led_strip()
 
@@ -78,7 +83,7 @@ class hska3d:
     def turn_on_lights(self):
         # turns lights on, waits, then turns them off. For taking photos mainly.
         # turn on lights async after the selftimer, so that they are not on full blast during waiting.
-        self.exec_command("sleep "+ self.selftimer + " && " + "python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"all_set.py 255 255 255 255 " + self.strip_length + "\"")
+        self.exec_command("sleep "+ self.selftimer + " && " + "python3.7 " + self.workpath + "/00_lighting_control/lighting_transmitter.py \"" + "all_set.py" + " " + self.photo_light_r + " " + self.photo_light_g + " " + self.photo_light_b + " " + self.photo_light_w + " " + self.strip_length + "\"")
 
     def apply_settings(self):
         # applies settings from config to compound pi
