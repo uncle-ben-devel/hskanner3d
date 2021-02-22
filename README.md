@@ -4,13 +4,12 @@
 
 # HSkanner3D
 3D scanning using a network of Raspberry Pies with camera modules and photogrammetry. This project is funded and overseen by Hochschule Karlsruhe - Technik und Wirtschaft and developed by Benedikt Reinberger. It involves the design and assembly of a complete 3D scanner (hardware and software). If you want to build your own, this may be a good starting point.
-## this project is still a WIP.
 
 ## HSkanner3D system architecture
 ![HSkanner3D system architecture](https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/system_architecture.png?raw=true)
 
-## WIP The Scanner in the Lab in Karlsruhe WIP
-
+## The Scanner in the Lab in Karlsruhe
+![HSkanner3D camera array](https://github.com/uncle-ben-devel/hskanner3d/blob/master/README_resources/scanner-slightblur.jpg?raw=true)
 
 # Setup
 ## Hardware
@@ -270,8 +269,9 @@ The [custom] section is loaded on GUI startup and is used as persistant storage 
     comet_brightness    is the brighness of the comet effect LEDs and can be from 0.0 to 1.0
     comet_r/g/b/w       are the color values of the comet, integers from 0 to 255.
     comet_sleeptime     is waiting time in seconds in between instances of the animation loop and thus defines how fast the effect will run through the strip.
+    photo_light_r/g/b/w are the color values the LED strips will assume before and while taking photos, integers from 0 to 255.
 ```
-*   now you can execute the GUI in a terminal. The buttons and tabs should be self-explanatory.
+*   now you can execute the GUI in a terminal or create a desktop shortcut (or modify the one supplied with the repo). The buttons and tabs of the GUI should be self-explanatory.
 ```
     python3.7 $HOME/hskanner3d/processing_chain/hskanner3d_gui.py
 ```
