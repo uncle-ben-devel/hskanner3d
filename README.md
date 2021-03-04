@@ -79,6 +79,7 @@ First, some naming conventions.
 *   and add
 ```
     @reboot sudo python3.7 /home/pi/00_lighting_control/lighting_receiver.py
+    @reboot sudo service ntp stop && sudo ntpd -gq && sudo service ntp start
 ```
 *   or equivalent, then save and exit.
 *   enable the camera interface on the Pi.
@@ -218,8 +219,9 @@ The HSkanner3D software is designed around the linux family of operating systems
 *   and add
 ```
     @reboot sudo python3.7 /home/pi/00_lighting_control/lighting_receiver.py
+    @reboot sudo service ntp stop && sudo ntpd -gq && sudo service ntp start
 ```
-*   or equivalent, then save and exit.
+*   or equivalent, then save and exit. The second line is to force a NTP synchronization at boot which is required for compound pi synchronized capture.
 *   next, we will remove the static IP we set for easy SSH. Execute
 ```
     sudo nano /etc/dhcpcd.conf
@@ -260,7 +262,7 @@ The [custom] section is loaded on GUI startup and is used as persistant storage 
     shutterspeed        is the shutterspeed of the Raspberry Pi camera module to be used. It is set in milliseconds and invalid values will result in the camera module using its default value. Since we want to scan humans, 1/50s...1/60s is a decent shutter speed.
     isosetting          is the ISO value of the camera module. Invalid values will result in the camera module using the highest or lowest possible setting (depending on whether you over- or undershot it), but writing the set ISO to the image metadata.
     whitebalance        is the whitebalance setting of the camera module. auto works well. If set values like tungsten are set, different camera modules will still have different color temperature in the end, with auto this problem is less visible.
-    selftimer           is additional wait time in seconds before the shot is taken. It takes more time from pressing an action button (take images, 3d scan, ...) to the actual capture because of program overhead and general slowness of compoundpi. If selftimer is 0.0, the captures are not synchronized (on purpose) - the cameras will fire as soon as possible. That is usually good enough for a 3D scan of a human. One disadvantage of synced capture is that the clock of SN and AS need to be in sync, and there is no apparent way to easily check for that. Since the capture timing is set from the AS, it sets a timestamp at current time + selftimer time. If the SN are one hour behind, it will take one hour until a capture will happen. Thus, I recommend using a selftimer of 0.0 until the scanner has been running for a while (NTP can sync in a minute or take an hour to sync - it's very sporadic). After that, you can sync the captures.
+    selftimer           is additional wait time in seconds before the shot is taken. It takes more time from pressing an action button (take images, 3d scan, ...) to the actual capture because of program overhead and general slowness of compoundpi. If selftimer is 0.0, the captures are not synchronized (on purpose) - the cameras will fire as soon as possible. That is usually good enough for a 3D scan of a human. One disadvantage of synced capture is that the clock of SN and AS need to be in sync, and there is no apparent way to easily check for that. Since the capture timing is set from the AS, it sets a timestamp at current time + selftimer time. If the SN are one hour behind, it will take one hour until a capture will happen. Don't set the selftimer too short (smaller than 0.1s), because Compound Pi will not be fast enough to react, yielding the error message 'Timestamp is in the past'. A value of 1.0s is usually a good time for decently fast reaction times with sync ong.
     rotation            rotation of the captured images in increments of 90 (degree). It's not required to rotate the images for Meshroom, it does not care. However, it is nicer to look at for humans.
     openfilebrowser     can be either 1 or 0 (enabled and disabled). If it's enabled, a file browser will open after image capture and the user can open the images to observe the captured material.
     view_mesh           can be either 1 or 0 (enabled and disabled). If it's enabled, Meshlab will open the generated 3D data for visualization after generation.
